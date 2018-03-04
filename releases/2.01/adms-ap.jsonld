@@ -139,11 +139,11 @@
             "@id":"http://www.w3.org/2000/01/rdf-schema#label",
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
-        "licence":{
+        "license":{
             "@id":"http://purl.org/dc/terms/license",
             "@type":"http://purl.org/dc/terms/LicenseDocument"
         },
-        "licence_label":{
+        "license_label":{
             "@id":"http://www.w3.org/2000/01/rdf-schema#label",
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
