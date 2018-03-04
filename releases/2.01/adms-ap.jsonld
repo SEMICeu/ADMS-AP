@@ -11,7 +11,7 @@
         "GeographicalCoverage":"http://purl.org/dc/terms/Location",
         "InteroperabilityLevel":"http://www.w3.org/2004/02/skos/core#Concept",
         "Language":"http://purl.org/dc/terms/LinguisticSystem",
-        "Licence":"http://purl.org/dc/terms/LicenceDocument",
+        "Licence":"http://purl.org/dc/terms/LicenseDocument",
         "MediaTypeOrExtent":"http://purl.org/dc/terms/MediaTypeOrExtent",
         "Publisher":"http://xmlns.com/foaf/0.1/Agent",
         "RepresentationTechnique":"http://www.w3.org/2004/02/skos/core#Concept",
