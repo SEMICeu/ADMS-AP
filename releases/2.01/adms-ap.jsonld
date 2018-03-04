@@ -140,8 +140,8 @@
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
         "licence":{
-            "@id":"http://purl.org/dc/terms/licence",
-            "@type":"http://purl.org/dc/terms/LicenceDocument"
+            "@id":"http://purl.org/dc/terms/license",
+            "@type":"http://purl.org/dc/terms/LicenseDocument"
         },
         "licence_label":{
             "@id":"http://www.w3.org/2000/01/rdf-schema#label",
