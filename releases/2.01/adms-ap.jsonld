@@ -97,7 +97,7 @@
         },
         "homepage":{
             "@id":"http://xmlns.com/foaf/0.1/homepage",
-            "@type":"http://xmlns.com/foaf/0.1/Document
+            "@type":"http://xmlns.com/foaf/0.1/Document"
         },
         "identifier":{
             "@id":"http://purl.org/dc/terms/identifier",
@@ -111,7 +111,7 @@
             "@id":"http://www.w3.org/2004/02/skos/core#inScheme",
             "@type":"http://www.w3.org/2004/02/skos/core#ConceptScheme"
         },
-        "interoperability_level_label":{
+        "interoperabilityLevel_label":{
             "@id":"http://www.w3.org/2004/02/skos/core#label",
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
@@ -151,7 +151,7 @@
             "@id":"http://www.w3.org/2000/01/rdf-schema#label",
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
-        "mediatypeorextent_label":{
+        "mediaTypeOrExtent_label":{
             "@id":"http://www.w3.org/2000/01/rdf-schema#label",
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
@@ -179,7 +179,7 @@
             "@id":"http://www.w3.org/ns/adms#representationTechnique",
             "@type":"http://www.w3.org/2004/02/skos/core#Concept"
         },
-        "representation_technique_label":{
+        "representationTechnique_label":{
             "@id":"http://www.w3.org/2004/02/skos/core#label",
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
@@ -207,7 +207,7 @@
             "@id":"http://www.w3.org/ns/dcat#themeTaxonomy",
             "@type":"http://www.w3.org/2004/02/skos/core#ConceptScheme"
         },
-        "theme_taxonomy_label":{
+        "themeTaxonomy_label":{
             "@id":"http://www.w3.org/2000/01/rdf-schema#label",
             "@type":"http://www.w3.org/2000/01/rdf-schema#Literal"
         },
