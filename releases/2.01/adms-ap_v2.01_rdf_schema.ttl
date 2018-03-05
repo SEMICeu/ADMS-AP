@@ -1,0 +1,995 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix v: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://labs.mondeca.com/vocab/voaf#> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#>.
+
+<http://www.w3.org/ns/adms#> 	a voaf:Vocabulary, owl:Ontology;
+  voaf:specializes dcat:;
+  dct:title "Asset Description Metadata Schema - Application Profile(ADMS-AP)"@en;
+  rdfs:label "Asset Description Metadata Schema - Application Profile(ADMS-AP)"@en;
+	dct:abstract "ADMS is a profile of DCAT, used to describe semantic assets (or just 'Assets'), defined as highly reusable metadata (e.g. xml schemata, generic data models) and reference data (e.g. code lists, taxonomies, dictionaries, vocabularies) that are used for eGovernment system development."@en;
+	dct:creator [schema:affiliation <http://www.w3.org/data#W3C>;
+	  rdfs:seeAlso <http://philarcher.org/foaf.rdf#me>;
+  	foaf:homepage <http://www.w3.org/People/all#phila>;
+  	foaf:name "Phil Archer"] ,
+    [schema:affiliation [foaf:homepage <http://ies.jrc.ec.europa.eu/DE>; foaf:name "European Commission, Joint Research Centre "]; 
+  	rdfs:seeAlso <http://andrea-perego.name/foaf/#me>;
+	  foaf:homepage <http://andrea-perego.name/>;
+	  foaf:name "Andrea Perego"] ,
+    [rdfs:seeAlso <http://makxdekkers.com/makxdekkers.rdf#me>; foaf:homepage <http://makxdekkers.com/>;
+    	foaf:name "Makx Dekkers"];
+  foaf:maker[foaf:name "Government Linked Data WG, based on output from the ADMS Working Group"; foaf:homepage <http://www.w3.org/2011/gld/>];
+	dct:description """This is the RDF encoding of the Asset Description Metadata Schema, originally 
+    developed under the European Union's ISA Programme and further developed by the W3C Government Linked Data Working Group.
+    It re-uses terms from several other vocabularies, notably Dublin Core, with elements of SKOS, FOAF and more. """;
+	dct:modified "2016-5-11"^^xsd:date;
+	vann:preferredNamespacePrefix "adms";
+	vann:preferredNamespaceUri "http://www.w3.org/ns/adms#";
+	rdfs:comment "This file specifies the set of RDF classes and properties used in ADMS-AP"@en;
+	wdrs:describedby <http://www.w3.org/TR/vocab-adms>.
+
+
+
+              #======<>===============================<>=====#	
+#===========  #------<>-------------------------------<>-----#  ===========#
+#===========  #------<>       MANDATORY CLASSES       <>-----#  ===========#
+#===========  #------<>-------------------------------<>-----#	===========#
+              #======<>===============================<>=====#		
+	
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>                CLASS - ASSET                 <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+
+dcat:Dataset
+	a rdfs:Class;
+	dct:identifier "dcat:Dataset"@en ;
+	rdfs:comment "Abstract entity that reflects the intellectual content of an Asset and represents those characteristics that are independent of its physical embodiment. This abstract entity combines the FRBR  entities work (a distinct intellectual or artistic creation) and expression (the intellectual or artistic realization of a work). The physical embodiment of an Asset is called an Asset Distribution. A particular Asset may have zero or more Distributions."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset"@en;
+	vann:usageNote "Mandatory class."@en .	
+	
+#>-----------------------------------------<#
+#>      Asset, dcat:Dataset PROPERTIES     <#
+#>-----------------------------------------<#
+
+dcat:contactPoint
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:contactPoint"@en;
+	rdfs:comment "Contact point for further information about the Asset, where errors can be reported or suggestions can be made."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset - contact point"@en;
+	rdfs:range v:Kind;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+	
+dct:description
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:description"@en;
+	rdfs:comment "Descriptive text for the Asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - description"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+	
+dct:publisher
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:publisher"@en;
+	rdfs:comment "Organisation making the Asset available; the publisher is the Agent that publishes the Asset, not the Agent that publishes the metadata about it."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - publisher"@en;
+	rdfs:range foaf:Agent;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+	
+dct:title
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:title"@en;
+	rdfs:comment "Name of the Asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - title"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+	
+dct:type
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:type"@en;
+	rdfs:comment "Type of the Asset, using a controlled vocabulary - EIRA vocabulary >> https://joinup.ec.europa.eu/svn/eia/taxonomy/EIRA_SKOS.rdf"@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - type"@en;
+	rdfs:range skos:Concept;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+	
+dcat:distribution
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:distribution"@en;
+	rdfs:comment "Implementation of the Asset in a particular format."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset - distribution"@en;
+	rdfs:range dcat:Distribution;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+dcat:keyword
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dcat:keyword"@en;
+	rdfs:comment "Word of phrase to describe the Asset."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset - keyword"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+dcat:landingPage
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:landingPage"@en;
+	rdfs:comment "Web page that provides access to the asset, its releases, distributions and/or additional information. It is intended to point to a landing page at the original asset provider, not to a page on a site of a third party, such as a catalogue or repository."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset - landing Page"@en;
+	rdfs:range foaf:Document;
+	vann:usageNote "Recommended Property - 0..1"@en.	
+	
+dcat:theme
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:theme"@en;
+	rdfs:comment "Theme or sector to which the Asset applies, using a controlled vocabulary - Dataset Theme Vocabulary >> http://publications.europa.eu/resource/authority/data-theme ; the values to be used for this property are the URIs of the concepts in the vocabulary"@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset - theme"@en;
+	rdfs:range skos:Concept;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+dct:language
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:language"@en;
+	rdfs:comment "Language of the Asset, or language supported by software, using a controlled vocabulary - MDR Languages Named Authority List >> http://publications.europa.eu/resource/authority/language"@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - language"@en;
+	rdfs:range dct:LinguisticSystem;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+dct:relation
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:relation"@en;
+	rdfs:comment "Related resource, in particular a related asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - relation"@en;
+	rdfs:range rdfs:Resource;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+
+dct:spatial
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:spatial"@en;
+	rdfs:comment "Geographic region or jurisdiction to which the Asset applies, using a controlled vocabulary - MDR Countries Named Authority List >> http://publications.europa.eu/resource/authority/country ; MDR Places Named Authority List >> http://publications.europa.eu/resource/authority/place/"@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - spatial"@en;
+	rdfs:range dct:Location;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+adms:includedAsset
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "adms:includedAsset"@en;
+	rdfs:comment "An Asset that is contained in the Asset being described."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/adms#>;
+	rdfs:label "Asset - includedAsset"@en;
+	rdfs:range dcat:Dataset;
+	vann:usageNote "Optional Property - 0..n"@en.
+
+adms:status
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "adms:status"@en;
+	rdfs:comment "Status of the Asset in the context of a particular workflow process, using a controlled vocabulary - ADMS Status vocabulary >> http://purl.org/adms/status/ "@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/adms#>;
+	rdfs:label "Asset - status"@en;
+	rdfs:range skos:Concept;
+	vann:usageNote "Optional Property - 0..n"@en.
+		
+adms:translation
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "adms:translation"@en;
+	rdfs:comment "Translation of the Asset."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/adms#>;
+	rdfs:label "Asset - translation"@en;
+	rdfs:range dcat:Dataset;
+	vann:usageNote "Optional Property - 0..n"@en.
+	
+adms:versionNotes
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "adms:versionNotes"@en;
+	rdfs:comment "Description of changes between this version and the previous version of the Asset."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/adms#>;
+	rdfs:label "Asset - version Notes"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..1"@en.	
+	
+dct:identifier
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:identifier"@en;
+	rdfs:comment "Main identifier for the Asset, e.g. the URI or other unique identifier in the context of the Repository."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - identifier"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.	
+
+dct:issued
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:issued"@en;
+	rdfs:comment "Date of formal issuance of this version of the Asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - issued"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "rdfs:Literal typed as xsd:dateTime. Optional Property - 0..1"@en.	
+
+dct:isVersionOf
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:isVersionOf"@en;
+	rdfs:comment "An Asset that is the solution of which this Asset is a release."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - is Version Of"@en;
+	rdfs:range dcat:Dataset;
+	vann:usageNote "Optional Property - 0..1"@en.	
+
+dct:hasVersion
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:hasVersion"@en;
+	rdfs:comment "An Asset that is a release of this Asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - has Version"@en;
+	rdfs:range dcat:Dataset;
+	vann:usageNote "Optional Property - 0..n"@en.	
+
+dct:modified
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:modified"@en;
+	rdfs:comment "Date of latest update of this Asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - modified"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "rdfs:Literal typed as xsd:dateTime. Optional Property - 0..1"@en.	
+
+foaf:page
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "foaf:page"@en;
+	rdfs:comment "Documentation that contains information related to the asset."@en;
+	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/>;
+	rdfs:label "Asset - page"@en;
+	rdfs:range foaf:Document;
+	vann:usageNote "Optional Property - 0..n"@en.	
+	
+owl:versionInfo
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "owl:versionInfo"@en;
+	rdfs:comment "Version number or other designation of the Asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - version Info"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.	
+	
+skos:altLabel
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "skos:altLabel"@en;
+	rdfs:comment "Alternative name for the Asset."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset - alt Label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.		
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>              CLASS - ASSET TYPE              <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+	
+skos:Concept
+	a rdfs:Class;
+	dct:identifier "skos:Concept"@en ;
+	rdfs:comment "Classification of an Asset according to a controlled vocabulary."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Asset type"@en;
+	vann:usageNote "Mandatory class"@en.	
+
+#>-----------------------------------------<#
+#>   Asset Type, skos:Concept PROPERTIES   <#
+#>-----------------------------------------<#
+
+
+skos:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "skos:label"@en;
+	rdfs:comment "Label for the Asset Type."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Asset Type - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+skos:inScheme
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "skos:inScheme"@en;
+	rdfs:comment "Concept scheme in which the Asset Type is included."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Asset Type - in Scheme"@en;
+	rdfs:range skos:ConceptScheme;
+	vann:usageNote "Recommended Property - 0..n"@en.		
+	
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>         CLASS - CONTACT INFORMATION          <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+	
+v:Kind
+	a rdfs:Class;
+	dct:identifier "v:Kind"@en ;
+	rdfs:comment "Contact point for further information about an Asset."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns#>;
+	rdfs:label "Contact Information"@en;
+	vann:usageNote "Mandatory class"@en.	
+
+#>-----------------------------------------<#
+#> Contact Information, v:Kind PROPERTIES  <#
+#>-----------------------------------------<#
+
+v:fn
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "v:fn"@en;
+	rdfs:comment "Full name of the contact."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns#>;
+	rdfs:label "Contact Information - full name"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+
+v:hasEmail
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "v:hasEmail"@en;
+	rdfs:comment "e-mail address where comments and question for an Asset or Repository can be sent"@en;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns#>;
+	rdfs:label "Contact Information - has Email"@en;
+	rdfs:range v:Email;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+
+v:hasAddress
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "v:hasAddress"@en;
+	rdfs:comment "Full address of the contact"@en;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns#>;
+	rdfs:label "Contact Information - has Address"@en;
+	rdfs:range v:Address;
+	vann:usageNote "Optional Property - 0..n"@en.
+
+v:hasTelephone
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "v:hasTelephone"@en;
+	rdfs:comment "Telephone number of the contact"@en;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns#>;
+	rdfs:label "Contact Information - has Telephone"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.
+
+v:hasURL
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "v:hasURL"@en;
+	rdfs:comment "Webpage of the contact"@en;
+	rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns#>;
+	rdfs:label "Contact Information - has URL"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.	
+	
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>              CLASS - PUBLISHER               <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+	
+foaf:Agent
+	a rdfs:Class;
+	dct:identifier "foaf:Agent"@en ;
+	rdfs:comment "Organisation that makes information available."@en;
+	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/>;
+	rdfs:label "Publisher"@en;
+	vann:usageNote "Mandatory class"@en.	
+
+#>--------------------------------------------<#
+#>     Publisher, foaf:Agent   PROPERTIES     <#
+#>--------------------------------------------<#	
+	
+foaf:name
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "foaf:name"@en;
+	rdfs:comment "Name of the person or organisation."@en;
+	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/>;
+	rdfs:label "Publisher - name"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Mandatory Property - 1..n"@en.
+	
+dct:type
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:type"@en;
+	rdfs:comment "The type of publisher - ADMS Publisher Type vocabulary >> http://purl.org/adms/publishertype/"@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Publisher - type"@en;
+	rdfs:range skos:Concept;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+	
+	
+              #======<>===============================<>=====#	
+#===========  #------<>-------------------------------<>-----#  ===========#
+#===========  #------<>      RECOMMENDED CLASSES      <>-----#  ===========#
+#===========  #------<>-------------------------------<>-----#	===========#
+              #======<>===============================<>=====#		
+
+			  
+			  
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>         CLASS - ASSET DISTRIBUTION           <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#		
+	
+dcat:Distribution
+	a rdfs:Class;
+	dct:identifier "dcat:Distribution"@en ;
+	rdfs:comment "Particular physical embodiment of an Asset, which is an example of the FRBR entity manifestation (the physical embodiment of an expression of a work). A Distribution is typically a downloadable computer file (but in principle it could also be a paper document or API response) that implements the intellectual content of an Asset. A particular Distribution is associated with one and only one Asset, while all Distributions of an Asset share the same intellectual content in different physical formats."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset Distribution"@en;
+	vann:usageNote "Recommended class."@en .
+	
+#>--------------------------------------------------<#
+#> Asset Distribution, dcat:Distribution PROPERTIES <#
+#>--------------------------------------------------<#	
+	
+dcat:accessURL
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:accessURL"@en;
+	rdfs:comment "URL of the Distribution."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset Distribution - access URL"@en;
+	rdfs:range rdfs:Resource;
+	vann:usageNote "Mandatory Property - 1..n"@en.	
+	
+dct:licence
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:licence"@en;
+	rdfs:comment "Conditions or restrictions for (re)use of the Distribution; if there are multiple licences, the most 'open' one should be given. Whenever relevant, the URIs under the concept scheme identified by http://purl.org/adms/OSIlicence/ can be used."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Distribution - licence"@en;
+	rdfs:range dct:LicenceDocument;
+	vann:usageNote "Mandatory Property - 1..1"@en.		
+	
+dct:format
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:format"@en;
+	rdfs:comment "Media type of the Distribution, using a controlled vocabulary - MDR File Type Name Authority List >> http://publications.europa.eu/resource/authority/file-type "@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Distribution - format"@en;
+	rdfs:range dct:MediaTypeOrExtent;
+	vann:usageNote "Recommended Property - 0..1"@en.			
+
+adms:representationTechnique
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "adms:representationTechnique"@en;
+	rdfs:comment "Language in which the Distribution is expressed, using a controlled vocabulary - ADMS Representation Technique Vocabulary >> http://purl.org/adms/representationtechnique/ 
+	Note: This is different from the file format, e.g. a ZIP file (file format) could contain an XML schema (representation technique) - "@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/adms#>;
+	rdfs:label "Asset Distribution - representation Technique"@en;
+	rdfs:range skos:Concept;
+	vann:usageNote "Optional Property - 0..1"@en.	
+	
+adms:status
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "adms:status"@en;
+	rdfs:comment "Description of changes between this version and the previous version of the Asset - ADMS Status vocabulary >> http://purl.org/adms/status/ "@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/adms#>;
+	rdfs:label "Asset Distribution - version Notes"@en;
+	rdfs:range skos:Concept;
+	vann:usageNote "Optional Property - 0..1"@en.	
+
+dct:description
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:description"@en;
+	rdfs:comment "Descriptive text for the Distribution."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Distribution - description"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.
+
+dct:issued
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:issued"@en;
+	rdfs:comment "Date of formal issuance of this version of the Distribution."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Distribution - issued"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "rdfs:Literal typed as xsd:DateTime. Optional Property - 0..1"@en.	
+
+dct:modified
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:modified"@en;
+	rdfs:comment "Date of latest update of this Distribution."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Distribution - modified"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "rdfs:Literal typed as xsd:DateTime. Optional Property - 0..1"@en.	
+
+dct:publisher
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:publisher"@en;
+	rdfs:comment "Organisation making the Distribution available; the publisher is the Agent that publishes the Distribution, not the Agent that publishes the metadata about it."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Distribution - publisher"@en;
+	rdfs:range foaf:Agent;
+	vann:usageNote "Optional Property - 0..n"@en.
+
+dct:title
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:title"@en;
+	rdfs:comment "Name of the Distribution."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Distribution - title"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.
+
+schema:fileSize	
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "schema:fileSize"@en;
+	rdfs:comment "Size of the file of the distribution."@en;
+	rdfs:isDefinedBy <http://schema.org/>;
+	rdfs:label "Asset Distribution - file Size"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..1"@en.
+
+spdx:checksum	
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "spdx:checksum"@en;
+	rdfs:comment "Checksum of the distribution."@en;
+	rdfs:isDefinedBy <http://spdx.org/rdf/terms#>;
+	rdfs:label "Asset Distribution - checksum"@en;
+	rdfs:range spdx:Checksum;
+	vann:usageNote "Optional Property - 0..1"@en.
+
+              #======<>===============================<>=====#	
+#===========  #------<>-------------------------------<>-----#  ===========#
+#===========  #------<>       OPTIONAL CLASSES        <>-----#  ===========#
+#===========  #------<>-------------------------------<>-----#	===========#
+              #======<>===============================<>=====#		
+	
+	
+	
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>          CLASS - ASSET REPOSITORY            <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#			
+	
+dcat:Catalog
+	a rdfs:Class;
+	dct:identifier "dcat:Catalog"@en ;
+	rdfs:comment "System or service that provides facilities for storage and maintenance of descriptions of Assets and Asset Distributions, and functionality that allows users to search and access these descriptions. An Asset Repository will typically contain descriptions of several Assets and related Asset Distributions."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset Repository"@en;
+	vann:usageNote "Optional class"@en.
+	
+#>-------------------------------------------<#
+#> Asset Repository, dcat:Catalog PROPERTIES <#
+#>-------------------------------------------<#	
+
+dct:description
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:description"@en;
+	rdfs:comment "Descriptive text for the Repository."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Repository - description"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Mandatory Property - 1..n"@en.	
+
+dct:publisher
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:publisher"@en;
+	rdfs:comment "Organisation making the Repository available; the publisher is the Agent that publishes the Repository, not the Agent that publishes the metadata about it."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Repository - publisher"@en;
+	rdfs:range foaf:Agent;
+	vann:usageNote "Mandatory Property - 1..1"@en.	
+
+dct:title
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:title"@en;
+	rdfs:comment "Name of the Repository."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Repository - title"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Mandatory Property - 1..n"@en.		
+
+dcat:contactPoint
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:contactPoint"@en;
+	rdfs:comment "Contact point for further information about the Repository."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset Repository - contact Point"@en;
+	rdfs:range v:vKind;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+dcat:dataset
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:dataset"@en;
+	rdfs:comment "An Asset included in the Repository."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset Repository - dataset"@en;
+	rdfs:range dcat:Dataset;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+dcat:themeTaxonomy
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dcat:themeTaxonomy"@en;
+	rdfs:comment "Concept Scheme used to classify an Asset Repository's assets, using a controlled vocabulary - Dataset Theme Vocabulary >> http://publications.europa.eu/resource/authority/data-theme; the value to be used for this property is the URI of the vocabulary itself, i.e. the concept scheme, not the URIs of the concepts in the vocabulary."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset Repository - theme Taxonomy"@en;
+	rdfs:range skos:ConceptScheme;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+dct:spatial
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:spatial"@en;
+	rdfs:comment "Geographic region or jurisdiction to which the Repository applies, using a controlled vocabulary - MDR Countries Named Authority List >> http://publications.europa.eu/resource/authority/country ; MDR Places Named Authority List >> http://publications.europa.eu/resource/authority/place/"@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Repository - spatial"@en;
+	rdfs:range dct:Location;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+foaf:homepage
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "foaf:homepage"@en;
+	rdfs:comment "Web page that gives access to the Repository."@en;
+	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/>;
+	rdfs:label "Asset Repository - homepage"@en;
+	rdfs:range foaf:Document;
+	vann:usageNote "Recommended Property - 0..1"@en.	
+	
+dcat:keyword
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dcat:keyword"@en;
+	rdfs:comment "Word of phrase to describe the Repository."@en;
+	rdfs:isDefinedBy <http://www.w3.org/ns/dcat#>;
+	rdfs:label "Asset Repository - keyword"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Optional Property - 0..n"@en.	
+	
+dct:issued
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:issued"@en;
+	rdfs:comment "Date of formal issuance of the Repository."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Asset Repository - issued"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "rdfs:Literal typed as xsd:dateTime. Optional Property - 0..n"@en.
+	
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>               CLASS - CHECKSUM               <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+	
+spdx:Checksum
+	a rdfs:Class;
+	dct:identifier "spdx:Checksum"@en ;
+	rdfs:comment "Independently reproducible mechanism that permits unique identification of a specific Software Package."@en;
+	rdfs:isDefinedBy <http://spdx.org/rdf/terms#>;
+	rdfs:label "Checksum"@en;
+	vann:usageNote "Optional class"@en.
+	
+#>------------------------------------------<#
+#>    Checksum, spdx:Checksum PROPERTIES    <#
+#>------------------------------------------<#
+
+spdx:algorithm
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "spdx:algorithm"@en;
+	rdfs:comment "SHA-1 is the only supported algorithm."@en;
+	rdfs:isDefinedBy <http://spdx.org/rdf/terms#>;
+	rdfs:label "Checksum - algorithm"@en;
+	rdfs:range spdx:checksumAlgorithm_sha1;
+	vann:usageNote "Mandatory Property - 1..1"@en.
+
+spdx:checksumValue
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "spdx:checksumValue"@en;
+	rdfs:comment "Lower case hexadecimal encoded digest value produced using a specific algorithm."@en;
+	rdfs:isDefinedBy <http://spdx.org/rdf/terms#>;
+	rdfs:label "Checksum - checksum Value"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "rdfs:Literal typed as xsd:hexBinary. Mandatory Property - 1..1"@en.
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>            CLASS - DOCUMENTATION             <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#		
+	
+foaf:Document
+	a rdfs:Class;
+	dct:identifier "foaf:Document"@en ;
+	rdfs:comment "Document that further describes an Asset or gives guidelines for its use."@en;
+	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/>;
+	rdfs:label "Documentation"@en;
+	vann:usageNote "Optional class"@en.
+	
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>       CLASS - GEOGRAPHICAL COVERAGE          <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+
+dct:Location
+	a rdfs:Class;
+	dct:identifier "dct:Location"@en ;
+	rdfs:comment "Document that further describes an Asset or gives guidelines for its use."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Geographical Coverage"@en;
+	vann:usageNote "Optional class"@en.		
+	
+#>--------------------------------------------------<#
+#> Geographical Coverage, dct:Location   PROPERTIES <#
+#>--------------------------------------------------<#
+	
+rdfs:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "rdfs:label"@en;
+	rdfs:comment "Name of the location"@en;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#>;
+	rdfs:label "Geographical Coverage - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+	
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>       CLASS - INTEROPERABILITY LEVEL         <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+	
+skos:Concept
+	a rdfs:Class;
+	dct:identifier "skos:Concept"@en ;
+	rdfs:comment "Interoperability Level of the Asset"@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Interoperability Level"@en;
+	vann:usageNote "Optional class"@en.		
+	
+#>---------------------------------------------------<#
+#> Interoperability Level, skos:Concept   PROPERTIES <#
+#>---------------------------------------------------<#	
+
+skos:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "skos:label"@en;
+	rdfs:comment "Label for the Interoperability Level"@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Interoperability Level - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+	
+skos:inScheme
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "skos:inScheme"@en;
+	rdfs:comment "Concept scheme in which the Interoperability Level is included."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Interoperability Level - in Scheme"@en;
+	rdfs:range skos:ConceptScheme;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>              CLASS - LANGUAGE                <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+	
+dct:LinguisticSystem
+	a rdfs:Class;
+	dct:identifier "dct:LinguisticSystem"@en ;
+	rdfs:comment "Language of an Asset that contains textual information, e.g. the language of the terms in a controlled vocabulary or the language in which a document is written."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Language"@en;
+	vann:usageNote "Optional class"@en.		
+	
+#>---------------------------------------------<#
+#> Language, dct:LinguisticSystem   PROPERTIES <#
+#>---------------------------------------------<#	
+		
+rdfs:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "rdfs:label"@en;
+	rdfs:comment "Name of the Language."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#>;
+	rdfs:label "Language - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>               CLASS - LICENCE                <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#		
+	
+dct:LicenceDocument
+	a rdfs:Class;
+	dct:identifier "dct:LicenceDocument"@en ;
+	rdfs:comment "Conditions or restrictions that apply to the use of a Repository or Distribution, e.g. whether it is in the public domain, or that some restrictions apply such as attribution being required, or that it can only be used for non-commercial purposes etc."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Licence"@en;
+	vann:usageNote "Optional class"@en.	
+	
+#>---------------------------------------------<#
+#>  Licence, dct:LicenseDocument   PROPERTIES  <#
+#>---------------------------------------------<#	
+	
+dct:type
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "dct:type"@en;
+	rdfs:comment "Label for the Interoperability Level - ADMS Licence Type vocabulary >> http://purl.org/adms/licencetype/ ; use only one of the four terms     :PublicDomain, :OSIcompliant, :NonOSIcompliant, :UnknownIPR"@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Licence - type"@en;
+	rdfs:range skos:Concept;
+	vann:usageNote "Mandatory Property - 1..1"@en.
+	
+dct:description
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "dct:description"@en;
+	rdfs:comment "Description of the Licence."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Licence - description"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+	
+rdfs:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "rdfs:label"@en;
+	rdfs:comment "Label for the Licence."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#>;
+	rdfs:label "Licence - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>        CLASS - MEDIA TYPE OR EXTENT          <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#		
+	
+dct:MediaTypeOrExtent
+	a rdfs:Class;
+	dct:identifier "dct:MediaTypeOrExtent"@en ;
+	rdfs:comment "Technical format in which a Distribution is available, e.g. PDF, XSD etc."@en;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/>;
+	rdfs:label "Media Type"@en;
+	vann:usageNote "Optional class"@en.	
+	
+#>------------------------------------------------<#
+#> Media Type, dct:MediaTypeOrExtent   PROPERTIES <#
+#>------------------------------------------------<#		
+	
+rdfs:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "rdfs:label"@en;
+	rdfs:comment "Label for the File format."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#>;
+	rdfs:label "Media Type - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.		
+	
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>      CLASS - REPRESENTATION TECHNIQUE        <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#		
+
+skos:Concept
+	a rdfs:Class;
+	dct:identifier "skos:Concept"@en ;
+	rdfs:comment "Machine-readable language in which a Distribution is expressed."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Representation Technique"@en;
+	vann:usageNote "Optional class"@en.	
+	
+#>-----------------------------------------------------<#
+#> Representation Technique, skos:Concept   PROPERTIES <#
+#>-----------------------------------------------------<#	
+	
+skos:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "skos:label"@en;
+	rdfs:comment "Label for the Representation Technique."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Representation Technique - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+skos:inScheme
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "skos:inScheme"@en;
+	rdfs:comment "Concept scheme in which the Representation Technique is included."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Representation Technique - in Scheme"@en;
+	rdfs:range skos:ConceptScheme;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>                CLASS - STATUS                <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#		
+	
+skos:Concept
+	a rdfs:Class;
+	dct:identifier "skos:Concept"@en ;
+	rdfs:comment "Indication of the maturity of an Asset or a Distribution."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Status"@en;
+	vann:usageNote "Optional class"@en.	
+
+	
+#>------------------------------------------<#
+#>     Status, skos:Concept   PROPERTIES    <#
+#>------------------------------------------<#	
+	
+skos:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "skos:label"@en;
+	rdfs:comment "Label for the Status."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Status - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+skos:inScheme
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "skos:inScheme"@en;
+	rdfs:comment "Concept scheme in which the Status is included."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Status - in Scheme"@en;
+	rdfs:range skos:ConceptScheme;
+	vann:usageNote "Recommended Property - 0..n"@en.		
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>                CLASS - THEME                 <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#	
+	
+skos:Concept
+	a rdfs:Class;
+	dct:identifier "skos:Concept"@en ;
+	rdfs:comment "Concept or subject to which an Asset applies, e.g. 'law' or 'environment'."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Theme"@en;
+	vann:usageNote "Optional class"@en.		
+	
+#>--------------------------------------------<#
+#>     Theme, skos:Concept   PROPERTIES       <#
+#>--------------------------------------------<#	
+	
+skos:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "skos:label"@en;
+	rdfs:comment "Label for the Theme."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Theme - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+skos:inScheme
+	a rdf:Property,	owl:ObjectProperty;
+	dct:identifier "skos:inScheme"@en;
+	rdfs:comment "Concept scheme in which the Theme is included."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Theme - in Scheme"@en;
+	rdfs:range skos:ConceptScheme;
+	vann:usageNote "Recommended Property - 0..n"@en.	
+
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#
+#-----<>           CLASS - THEME TAXONOMY             <>-----#
+#-----<><><><><><><><><><><><><><><><><><><><><><><><><>-----#		
+	
+skos:ConceptScheme
+	a rdfs:Class;
+	dct:identifier "skos:ConceptScheme"@en ;
+	rdfs:comment "Controlled vocabulary that contains terms that are used as Themes for the Assets in a Repository."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Theme Taxonomy"@en;
+	vann:usageNote "Optional class"@en.	
+	
+#>-------------------------------------------------<#
+#> Theme Taxonomy, skos:ConceptScheme   PROPERTIES <#
+#>-------------------------------------------------<#	
+	
+rdfs:label
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "rdfs:label"@en;
+	rdfs:comment "Name of the Theme Taxonomy."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#>;
+	rdfs:label "Theme Taxonomy - label"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.
+
+skos:hasTopConcept
+	a rdf:Property,	owl:DatatypeProperty;
+	dct:identifier "skos:hasTopConcept"@en;
+	rdfs:comment "Concept that is the top level of the Theme Taxonomy."@en;
+	rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#>;
+	rdfs:label "Theme Taxonomy - has Top Concept"@en;
+	rdfs:range rdfs:Literal;
+	vann:usageNote "Recommended Property - 0..n"@en.		
+	
+	
