@@ -1,0 +1,1215 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="rdf2html.xsl"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY schema "http://schema.org/" >
+    <!ENTITY sioc "http://rdfs.org/sioc/ns#" >
+    <!ENTITY rad "http://www.w3.org/ns/radion#" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY dcDoc "http://dublincore.org/documents/dcmi-terms/">
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY dcat "http://www.w3.org/ns/dcat#" >
+    <!ENTITY adms "http://www.w3.org/ns/adms#" >
+    <!ENTITY vann "http://purl.org/vocab/vann/" >
+    <!ENTITY xh "http://www.w3.org/1999/xhtml" >
+    <!ENTITY xhv "http://www.w3.org/1999/xhtml/vocab#">
+    <!ENTITY doap "http://usefulinc.com/ns/doap#" >
+    <!ENTITY cc "http://creativecommons.org/ns#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY vcard "http://www.w3.org/2006/vcard/ns#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY sdmx "http://purl.org/linked-data/sdmx#" >
+    <!ENTITY qb "http://purl.org/linked-data/cube#" >
+    <!ENTITY wdrs "http://www.w3.org/2007/05/powder-s#" >
+    <!ENTITY voaf "http://labs.mondeca.com/vocab/voaf#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY skosDoc "http://www.w3.org/TR/skos-primer/">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY sf "http://sourceforge.net/api/sfelements.rdf#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY sdmx-code "http://purl.org/linked-data/sdmx/2009/code#" >
+    <!ENTITY sdmx-subject "http://purl.org/linked-data/sdmx/2009/subject#" >
+    <!ENTITY sdmx-measure "http://purl.org/linked-data/sdmx/2009/measure#" >
+    <!ENTITY sdmx-concept "http://purl.org/linked-data/sdmx/2009/concept#" >
+    <!ENTITY sdmx-metadata "http://purl.org/linked-data/sdmx/2009/metadata#" >
+    <!ENTITY sdmx-dimension "http://purl.org/linked-data/sdmx/2009/dimension#" >
+    <!ENTITY sdmx-attribute "http://purl.org/linked-data/sdmx/2009/attribute#" >
+    <!ENTITY documentation "https://joinup.ec.europa.eu/asset/adms_foss/release/release100">
+    <!ENTITY documentationTitle "ADMS.SW Specification v1.00">
+    <!ENTITY methodology "https://joinup.ec.europa.eu/elibrary/document/isa-deliverable-process-and-methodology-developing-core-vocabularies">
+    <!ENTITY methodologyTitle "Process and Methodology for Developing Core Vocabularies">
+    <!ENTITY forum "https://joinup.ec.europa.eu/asset/adms_foss/release/release100">
+    <!ENTITY forumTitle "Release comments">    
+]>
+<rdf:RDF
+    xmlns:sdmx-subject="http://purl.org/linked-data/sdmx/2009/subject#"
+    xmlns:rad="http://www.w3.org/ns/radion#"
+    xmlns:sdmx-measure="http://purl.org/linked-data/sdmx/2009/measure#"
+    xmlns:sdmx-dimension="http://purl.org/linked-data/sdmx/2009/dimension#"
+    xmlns:sdmx-metadata="http://purl.org/linked-data/sdmx/2009/metadata#"
+    xmlns:schema="http://schema.org/"
+    xmlns:sdmx-concept="http://purl.org/linked-data/sdmx/2009/concept#"
+    xmlns:wdrs="http://www.w3.org/2007/05/powder-s#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns="http://purl.org/adms/sw/"
+    xmlns:doap="http://usefulinc.com/ns/doap#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:xhv="&xhv;"
+    xmlns:xh="&xh;"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:spdx="http://www.spdx.org/rdf/terms#"
+    xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
+    xmlns:swid="http://standards.iso.org/iso/19770/-2/2009/"
+    xmlns:adms="http://www.w3.org/ns/adms#"
+    xmlns:sioc="http://rdfs.org/sioc/ns#"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+    xmlns:sdmx="http://purl.org/linked-data/sdmx#"
+    xmlns:sdmx-code="http://purl.org/linked-data/sdmx/2009/code#"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:voaf="http://labs.mondeca.com/vocab/voaf#"
+    xmlns:qb="http://purl.org/linked-data/cube#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sf="http://sourceforge.net/api/sfelements.rdf#"
+  xml:base="http://purl.org/adms/sw/" > 
+
+    <owl:Ontology rdf:about="http://purl.org/adms/sw/">
+        <rdfs:label xml:lang="en">Asset Description Metadata Schema for Software (ADMS.SW)</rdfs:label>
+        <dcterms:modified rdf:datatype="xsd:date">2012-06-29</dcterms:modified>
+        <dcterms:abstract xml:lang="en">ADMS.SW is intended as a model that facilitates federation and co-operation. It is not the primary intention that forge owners redesign or convert their current systems and data to conform to ADMS./FOSS, but rather that ADMS.SW can act as a common layer among software forges that want to exchange data.</dcterms:abstract>
+        <dcterms:rights xml:lang="en">Copyright (c) 2012 European Commission.</dcterms:rights>
+        <cc:attributionName xml:lang="en">European Commission</cc:attributionName>
+        <rdfs:comment xml:lang="en">This file specifies the set of RDF classes and properties used in ADMS.SW</rdfs:comment>
+        <dcterms:description xml:lang="en">This is the RDF encoding of the Asset Description Metadata Schema for Software, developed under the European Union&apos;s ISA Programme, specifically under SEMIC Phase II, directed by Szabolcs Szekacs of DG DIGIT. It re-uses terms from several other vocabularues, notably DOAP (Description of a Project), DCAT (The Data Catalog Vocabulary) and Dublin Core with elements of SKOS, FOAF and more. The ADMS Concept Scheme, available at http://www.w3.org/ns/adms.html, defines its own lexical terms for its classes, properties and relationships.</dcterms:description>
+        <owl:versionInfo xml:lang="en">Version 1.00 29 June 2012</owl:versionInfo>
+        <vann:preferredNamespacePrefix xml:lang="en">admssw</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri xml:lang="en">http://purl.org/adms/sw/</vann:preferredNamespaceUri>
+        <dcterms:publisher rdf:resource="http://dbpedia.org/resource/European_Commission"/>
+        <cc:attributionURL rdf:resource="http://ec.europa.eu/"/>
+        <xhv:prev rdf:resource="http://purl.org/adms/foss/20120625/"/>
+        <wdrs:describedby rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+        <voaf:specializes rdf:resource="http://www.w3.org/ns/radion#"/>
+        <dcterms:relation rdf:resource="https://joinup.ec.europa.eu/asset/adms/topic/public-comments-adms-specification-v10"/>
+	    <dcterms:rights>Copyright &#169; 2012 European Commission.</dcterms:rights>
+	    <dcterms:license>
+	      <rdf:Description rdf:about="https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11">
+	        <dcterms:title>ISA Open Metadata Licence v1.1</dcterms:title>
+	        <cc:attributionName>European Commission</cc:attributionName>
+	        <cc:attributionURL rdf:resource="http://ec.europa.eu/"/>
+	      </rdf:Description>
+	    </dcterms:license>
+        <dcterms:conformsTo rdf:resource="https://joinup.ec.europa.eu/elibrary/document/isa-deliverable-process-and-methodology-developing-core-vocabularies"/>
+	    <foaf:depiction>
+	      <rdf:Description rdf:about="ADMS_SW_v1.00_Conceptual_Model.png">
+	        <rdfs:label>UML Class Diagram: ADMS.SW v1.00 Conceptual Model</rdfs:label>
+	      </rdf:Description>
+	    </foaf:depiction>  
+	    <foaf:logo>
+	      <rdf:Description rdf:about="ADMS_SW v1.00_RDF_Schema.png">
+	        <rdfs:label>UML Class Diagram: ADMS.SW v1.00 RDF Schema</rdfs:label>
+	      </rdf:Description>
+	    </foaf:logo>       
+	    <dcterms:conformsTo>
+	      <rdf:Description rdf:about="&methodology;">
+	        <dcterms:title>&methodologyTitle;</dcterms:title>
+	      </rdf:Description>
+	    </dcterms:conformsTo>	     
+	    <dcterms:creator rdf:parseType="Resource">
+	      <rdfs:seeAlso rdf:resource="http://stijngoedertier.org/stijngoedertier.rdf#me"/>
+	      <foaf:name>Stijn Goedertier</foaf:name>
+	      <foaf:homepage rdf:resource="http://stijngoedertier.org/"/>
+	      <schema:affiliation rdf:parseType="Resource">
+	        <foaf:name>PwC EU Services</foaf:name>
+	        <foaf:homepage rdf:resource="http://www.pwc.com/gx/en/eu-institutions-services"/>
+	      </schema:affiliation>	           
+	    </dcterms:creator>
+	    <dcterms:creator rdf:parseType="Resource">
+	      <rdfs:seeAlso rdf:resource="http://philarcher.org/foaf.rdf#me"/>
+	      <foaf:name>Phil Archer</foaf:name>
+	      <foaf:homepage rdf:resource="http://philarcher.org/"/>
+	      <schema:affiliation rdf:parseType="Resource">
+	        <foaf:name>W3C/ERCIM</foaf:name>
+	        <foaf:homepage rdf:resource="http://www.w3.org/"/>
+	      </schema:affiliation>
+	    </dcterms:creator>		      
+	    <foaf:maker rdf:parseType="Resource">
+	      <foaf:name>ADMS.SW Working Group</foaf:name>
+	      <foaf:page rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/description"/>
+	    </foaf:maker>
+    </owl:Ontology>
+
+<!-- Software Project -->
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/SoftwareProject">
+    <dcterms:identifier xml:lang="en">admssw:SoftwareProject</dcterms:identifier>
+    <rdfs:subClassOf rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+    <rdfs:label xml:lang="en">Software Project</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">A Software Project is a time-delimited undertaking with the objective to produce one or more software releases, materialised as software packages. Some projects are long-running undertakings, and do not have a clear time-delimited nature or project organisation. In this case, the term 'software project' can be interpreted as the result of the work: a collection of related software releases that serve a common purpose.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#description">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/description"/>
+    <dcterms:identifier xml:lang="en">doap:description</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - description</rdfs:label>
+    <rdfs:comment xml:lang="en">Both the dcterms:description and doap:description properties fully cover the ADMS.SW property of the same name. </rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#homepage">
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
+    <dcterms:identifier xml:lang="en">doap:homepage</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - homepage</rdfs:label>
+    <rdfs:comment xml:lang="en">Both the foaf:homepage and doap:homepage property fully represents the ADMS.SW relationship of the same name. </rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/radion#keyword">
+    <vann:usageNote xml:lang="en">The range of rad:keyword is Literal. They should be provided as language-tagged strings.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">rad:keyword</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - keyword</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/radion/release/100"/>
+    <rdfs:comment xml:lang="en">A word or phrase used to succinctly descibe the software.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#name">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/name"/>
+    <dcterms:identifier xml:lang="en">doap:name</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - name</rdfs:label>
+    <rdfs:comment xml:lang="en">Both the dcterms:name and doap:name property fully represents the ADMS.SW property of the same name. </rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#release">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to associate a project with its release.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">doap:release</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - release</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">The doap:release property fully covers the ADMS.SW property 'release'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://schema.org/contributor">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to associate a project with its contributor.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">schema:contributor</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - contributor</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://schema.org/SoftwareApplication"/>
+    <rdfs:comment xml:lang="en">contributing person or organisation for the project.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/fundedBy">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to associate a project with an organisation or person who funds it.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">admssw:fundedBy</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - funded by</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">contributing person or organisation for the project.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/forkOf">
+    <dcterms:identifier xml:lang="en">admssw:forkOf</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - fork of</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">software project of which the current project is a descendant .</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#developer">
+    <vann:usageNote xml:lang="en">The range of this property is foaf:Person.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">doap:developer</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - developer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">The doap:documenter property fully covers the ADMS.SW property 'developer'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#documenter">
+    <vann:usageNote xml:lang="en">The range of this property is foaf:Person.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">doap:documenter</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - documenter</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">The doap:documenter property fully covers the ADMS.SW property 'documenter'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#maintainer">
+    <vann:usageNote xml:lang="en">The range of this property is foaf:Person.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">doap:maintainer</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - maintainer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">The doap:maintainer property fully covers the ADMS.SW property 'maintainer'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#helper">
+    <vann:usageNote xml:lang="en">The range of this property is foaf:Person.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">doap:helper</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - helper</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">The doap:helper property fully covers the ADMS.SW property 'helper'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#tester">
+    <vann:usageNote xml:lang="en">The range of this property is foaf:Person.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">doap:tester</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - tester</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">The doap:tester property fully covers the ADMS.SW property 'tester'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#translator">
+    <vann:usageNote xml:lang="en">The range of this property is foaf:Person.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">doap:translator</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - translator</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">The doap:translator property fully covers the ADMS.SW property 'translator'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/metrics">
+    <vann:usageNote xml:lang="en">The range of this property is not fixed by the ADMS.SW specification. It is recommended to relate this property to an instance of the class 'qb:DataSet'.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">admssw:metrics</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - metrics</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">A data set of metrics about the software project or software release.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/radion#theme">
+    <dcterms:identifier xml:lang="en">rad:theme</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - theme</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/radion/release/100"/>
+    <rdfs:comment xml:lang="en">Topic, theme or function of the software. The theme relationship associates an Software Project or Release with  a specific Theme (a skos:Concept). </rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/intendedAudience">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:intendedAudience</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - intended audience</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">Intended audience of the software.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/locale">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:locale</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - locale</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">Locale of the software.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/userInterfaceType">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:userInterfaceType</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - user interface type</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">User interface type of the software.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/programmingLanguage">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:programmingLanguage</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - programming language</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">Programming language of the software.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
+    <dcterms:identifier xml:lang="en">dcterms:isPartOf</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - repository origin</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:isPartOf property fully represents relationship 'repository origin'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://schema.org/operatingSystem">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">schema:operatingSystem</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - operating system</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://schema.org/SoftwareApplication"/>
+    <rdfs:comment xml:lang="en">Operating system of the software.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/supportsFormat">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is dcterms:FileFormat.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:supportsFormat</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - supports format</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">Data format that is supported by the software.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/status">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:status</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Project - status</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">The status of the software project, asset, or package.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+<!-- Software Release -->
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/SoftwareRelease">
+    <dcterms:identifier xml:lang="en">admssw:SoftwareRelease</dcterms:identifier>
+    <rdfs:subClassOf rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/radion#Asset"/>
+    <rdfs:label xml:lang="en">Software Release</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">A Software Release is an abstract entity that reflects the intellectual content of the software and represents those characteristics of the software that are independent of its physical embodiment. This abstract entity corresponds to the FRBR entity expression (the intellectual or artistic realization of a work). An example of a Software Release is the Apache HTTP Server 2.22.22 (httpd) release.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/alternative">
+    <vann:usageNote xml:lang="en">Alternative name for the Asset. Any number of alternative names may be supplied. The range of dcterms:alternative is rdfs:Literal</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:alternative</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - alternative name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:alternative property fully represents the ADMS.SW property 'alternative name'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <vann:usageNote xml:lang="en">The ADMS.SW and RADion RDF Schemas use this to provide the creation date of this version of the Repository, Asset or Package. RADion expects a datatyped value and for it to be conformant with ISO 8601, preferably using an xsd data type.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:created</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - date of creation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:created property fully represents the ADMS.SW property 'date of creation'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <vann:usageNote xml:lang="en">RADion uses this to provide the date of latest update of the Repository, Asset or Package. RADion expects a datatyped value and for it to be conformant with ISO 8601, preferably using an xsd data type.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:modified</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - date of last modification</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:modified property fully represents the RADion and ADMS.SW property Date of Last Modification.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to provide descriptive text for the Software Repository, Software Release or Software Package.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:description</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - description</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:description property fully covers the ADMS.SW property of the same name.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/identifier">
+    <dcterms:identifier xml:lang="en">admssw:identifier</dcterms:identifier>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
+    <rdfs:label xml:lang="en">Software Release - identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">Any identifier for the AssetRelease.</rdfs:comment>
+    <vann:usageNote xml:lang="en">ADMS.SW uses this to include a local identifier for the Software Release. The range of this property is adms:Identifier. This allows specifying the identifying system and ensures that the identifier stays meainingful in a situation with multiple identification domains.</vann:usageNote>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/radion#keyword">
+    <vann:usageNote xml:lang="en">The range of rad:keyword is Literal. They should be provided as language-tagged strings.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">rad:keyword</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - keyword</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/radion/release/100"/>
+    <rdfs:comment xml:lang="en">A word or phrase used to succinctly descibe the Software Release</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#metadataDate">
+    <dcterms:identifier xml:lang="en">adms:metadataDate</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - metadataDate</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/adms/release/100"/>
+    <rdfs:comment xml:lang="en">The date of the most recent update of the metadata for the Asset.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <vann:usageNote xml:lang="en">ADMS.SW uses this to provide the name or label of any class. In cases that a Software Release has parallel names, for example if more than one official name exists, or if an organisation or country has more than one official language, this field can be repeated for all name variants</vann:usageNote>
+    <dcterms:identifier xml:lang="en">rdfs:label</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+    <rdfs:comment xml:lang="en">The rdfs:label property fully represents the RADion and ADMS.SW properties of name and label.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://usefulinc.com/ns/doap#revision">
+    <dcterms:identifier xml:lang="en">doap:revision</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - version</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://usefulinc.com/ns/doap#"/>
+    <rdfs:comment xml:lang="en">Revision identifier of a software release.</rdfs:comment>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://schema.org/releaseNotes">
+    <dcterms:identifier xml:lang="en">schema:releaseNotes</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - version notes</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://schema.org/SoftwareApplication"/>
+    <rdfs:comment xml:lang="en">Notes on the particular version of the Software Release. Description of what changed in this version.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/assessment">
+    <vann:usageNote xml:lang="en">The range of this property is foaf:Document.</vann:usageNote>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <dcterms:identifier xml:lang="en">admssw:assessment</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - assessment</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">Assessment of the asset.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#contactPoint">
+    <dcterms:identifier xml:lang="en">adms:contactPoint</dcterms:identifier>
+    <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#VCard"/>
+    <rdfs:label xml:lang="en">Software Release - contact point</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/adms/release/100"/>
+    <rdfs:comment rdf:parseType="Literal">Links an Asset to relevant <xh:a xmlns:xh="http://www.w3.org/1999/xhtml" xh:href="#ContactInformation">Contact Information</xh:a> which is provided using VCard.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/includedAsset">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/adms#adms:includedAsset"/>
+    <dcterms:identifier xml:lang="en">admssw:includedAsset</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - included asset</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">An Asset  that is contained in the Software Release being described. Example: a Linux distribution is being described, that contains other libraries and submodules.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/metrics">
+    <vann:usageNote xml:lang="en">The range of this property is not fixed by the ADMS.SW specification. It is recommended to relate this property to an instance of the class 'qb:DataSet'.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">admssw:metrics</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - metrics</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">A data set of metrics about the software project or software release.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/language">
+    <vann:usageNote xml:lang="en">RADion uses this to provide the language of the Asset. Note that this is quite separate from Locale.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:language</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - language</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:language property fully represents the RADion and ADMS.SW property of the same name.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/logo">
+    <dcterms:identifier xml:lang="en">foaf:logo</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - logo</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:comment xml:lang="en">The foaf:logo property fully represents the ADMS.SW property of the same name.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/2007/05/powder-s#describedby">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to link to the main documentation or specification of the Asset.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">wdrs:describedby</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - main documentation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2007/05/powder-s#"/>
+    <rdfs:comment rdf:parseType="Literal">The <xh:a xmlns:xh="http://www.w3.org/1999/xhtml" xh:href="http://www.w3.org/2007/05/powder-s#describedby">wdrs:describedby</xh:a> property fully represents the ADMS.SW relationship 'main documentation'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Property rdf:about="&adms;metadataDate"> 
+    <rdfs:label xml:lang="en">Software Release - metadata date</rdfs:label>
+    <rdfs:comment xml:lang="en">The date of the most recent update of the metadata for the Asset.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&documentation;" />
+    <rdfs:range rdf:resource="&rdfs;Literal" />
+    <dcterms:identifier>adms:metadataDate</dcterms:identifier>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="&adms;metadataLanguage">
+    <rdfs:label xml:lang="en">Software Release - metadata language</rdfs:label>
+    <rdfs:comment xml:lang="en">Links to the language of the metadata for the Asset. The range of adms:metadataLanguage is dcterms:LinguisticSystem which is used by RADion (and therefore ADMS) to represent the Language class.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&documentation;" />
+    <rdfs:range rdf:resource="&dcterms;LinguisticSystem" />
+    <dcterms:identifier>adms:metadataLanguage</dcterms:identifier>
+  </rdf:Property>
+
+  <rdf:Description rdf:about="http://www.w3.org/1999/xhtml/vocab#last">
+    <vann:usageNote xml:lang="en">ADMS.SW uses the XHTML 'last' property to link an Asset to the most recent (i.e. current) version.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">xhv:last</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - current version</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/1999/xhtml/vocab#"/>
+    <rdfs:comment xml:lang="en">The xhv:last property fully represents the RADion and ADMS.SW relationship 'current version'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/1999/xhtml/vocab#next">
+    <rdfs:label xml:lang="en">Software Release - next version</rdfs:label>
+    <rdfs:comment xml:lang="en">The xhv:next property fully represents the RADion relationship of Next version</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&xhv;" />
+    <vann:usageNote xml:lang="en">RADion uses the XHTML 'next' property to link an Asset to the next most recent version.</vann:usageNote>
+    <dcterms:identifier>xhv:next</dcterms:identifier>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/1999/xhtml/vocab#prev">
+    <vann:usageNote xml:lang="en">RADion and ADMS.SW uses the XHTML 'previous' property to link an Asset to the previous version.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">xhv:prev</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - previous version</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/1999/xhtml/vocab#"/>
+    <rdfs:comment xml:lang="en">The xhv:prev property fully represents the RADion and ADMS.SW relationship of Previous version</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/project">
+    <vann:usageNote xml:lang="en">The inverse property of 'admsv:project' is 'doap:release'.</vann:usageNote>
+    <rdfs:range rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+    <dcterms:identifier xml:lang="en">admssw:project</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - project</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/03"/>
+    <rdfs:comment xml:lang="en">The project that has produced the Asset.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+    <vann:usageNote xml:lang="en">Used in RADion and thus ADMS.SW to link to the organisation responsible for the publication of the Asset, Repository or Distribution. Note that the range is dcterms:Agent.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:publisher</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - publisher</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:publisher property fully represents the RADion and ADMS.SW relationship of the same name</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/relation">
+    <vann:usageNote xml:lang="en">Used in RADion to link any Asset to any other related Asset. RADion expects the object to be an instance of rad:Asset or a sub-class.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:relation</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - related asset</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:relation property fully represents the RADion related asset relationship.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#relatedWebPage">
+    <dcterms:identifier xml:lang="en">adms:relatedWebPage</dcterms:identifier>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <rdfs:label xml:lang="en">Software Release - related web page</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/adms/release/100"/>
+    <rdfs:comment xml:lang="en">Links to a Web page that contains information related to the asset. The range of adms:relatedWebPage is foaf:Document</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/package">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/radion#distribution"/>	
+    <dcterms:identifier xml:lang="en">admssw:package</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - package</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">The package relationship associates a Software Release with a Software Package.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
+    <vann:usageNote xml:lang="en">RADion uses dcterms:isPartOf to link an Asset to a Repository.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:isPartOf</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - repository origin</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:isPartOf property fully represents the RADion relationship of repository origin.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/spatial">
+    <vann:usageNote xml:lang="en">RADion uses this to link to the geographic region or jurisdiction that the Asset or Repository applies to. Note that the range is dcterms:Location.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:spatial</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - spatial coverage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:coverage property fully represents the RADion relationship of the same name</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/status">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:status</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - status</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">The status of the software project, asset, or package.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/radion#theme">
+    <dcterms:identifier xml:lang="en">rad:theme</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Release - theme</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/radion/release/100"/>
+    <rdfs:comment xml:lang="en">Topic, theme or function of the software. The theme relationship associates an Software Project or Release with  a specific Theme (a skos:Concept). </rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/usedBy">
+    <dcterms:identifier xml:lang="en">admssw:usedBy</dcterms:identifier>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdfs:label xml:lang="en">Software Release - used by</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/radion/release/100"/>
+    <rdfs:comment xml:lang="en">Agent that uses the Asset.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+
+
+
+<!-- Software Package -->
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/SoftwarePackage">
+    <dcterms:identifier xml:lang="en">admssw:SoftwarePackage</dcterms:identifier>
+    <rdfs:subClassOf rdf:resource="http://schema.org/SoftwareApplication"/>
+    <rdfs:subClassOf rdf:resource="http://www.spdx.org/rdf/terms#Package"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/radion#Distribution"/>
+    <rdfs:label xml:lang="en">Software Package</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">A Software Package represents a particular physical embodiment of a Software Release, which is an example of the FRBR entity manifestation (the physical embodiment of an expression of a work). A Software Package is typically a downloadable computer file (but in principle it could also be a paper document) that implements the intellectual content of a Software Release. A particular Software Package is associated with one and only one Software Release, while all Packages of a Release share the same intellectual content in different physical formats. An example of a Software Package is httpd-2.2.22.tar.gz , which represents the Unix Source of the Apache HTTP Server 2.22.22 (httpd) software release.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <vann:usageNote xml:lang="en">The ADMS.SW and RADion RDF Schemas use this to provide the creation date of this version of the Repository, Asset or Package. RADion expects a datatyped value and for it to be conformant with ISO 8601, preferably using an xsd data type.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:created</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - date of creation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:created property fully represents the ADMS.SW property 'date of creation'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <vann:usageNote xml:lang="en">RADion uses this to provide the date of latest update of the Repository, Asset or Package. RADion expects a datatyped value and for it to be conformant with ISO 8601, preferably using an xsd data type.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:modified</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - date of last modification</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:modified property fully represents the RADion and ADMS.SW property Date of Last Modification.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to provide descriptive text for the Software Repository, Software Release or Software Package.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:description</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - description</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:description property fully covers the ADMS.SW property of the same name.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <vann:usageNote xml:lang="en">ADMS.SW uses this to provide the name or label of any class. In cases that a Software Release has parallel names, for example if more than one official name exists, or if an organisation or country has more than one official language, this field can be repeated for all name variants</vann:usageNote>
+    <dcterms:identifier xml:lang="en">rdfs:label</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+    <rdfs:comment xml:lang="en">The rdfs:label property fully represents the RADion and ADMS.SW properties of name and label.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://standards.iso.org/iso/19770/-2/2009/software_id">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to aligin with the software identifying system in the ISO19770-2:2009 standard.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">swid:software_id</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - software_id</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.iso.org/iso/catalogue_detail.htm?csnumber=53670"/>
+    <rdfs:comment xml:lang="en">A unique token within the regid domain of the tag creator.</rdfs:comment>
+    <rdfs:range rdf:resource="http://standards.iso.org/iso/19770/-2/2009/SoftwareId"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/tagURL">
+    <dcterms:identifier xml:lang="en">admssw:tagURL</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - tag URL</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">URL from which a software tag file can be obtained for the Software Package.</rdfs:comment>
+    <vann:usageNote xml:lang="en">Several software tag standards exist such as the ISO19770-2:2009, the ISO19770-3 and the SPDX specification. These standards do not require the software tags to be available on via the Web.</vann:usageNote>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://schema.org/fileSize">
+    <dcterms:identifier xml:lang="en">schema:fileSize</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - file size</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://schema.org/SoftwareApplication"/>
+    <rdfs:comment xml:lang="en">The size of the package file in bytes.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.spdx.org/rdf/terms#checksum">
+
+    <dcterms:identifier xml:lang="en">spdx:checksum</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - checksum</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.spdx.org/rdf/terms#"/>
+    <rdfs:comment xml:lang="en">The checksum property provides a mechanism that can be used to verify that the contents of a Package have not been changed.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/format">
+    <vann:usageNote xml:lang="en">Used in RADion to link to the format that the Distribution is available in (e.g. EXE, ZIP) which is provided as a property of dcterms:FileFormat</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:format</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - format</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:format property fully represents the RADion relationship of the same name</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <vann:usageNote xml:lang="en">Used in RADion to link to the conditions or restrictions for (re-use) of the Distribution. Note that the range is dcterms:LicenseDocument</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:license</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - license</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:license property fully represents the RADion relationship of the same name.</rdfs:comment>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://schema.org/downloadUrl">
+    <dcterms:identifier xml:lang="en">schema:downloadUrl</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - access URL</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://schema.org/SoftwareApplication"/>
+    <rdfs:comment xml:lang="en">The URL of the Repository or Distribution. The range of adms:accessURL is xsd:anyURI</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/release">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/radion#distributionOf"/>
+    <dcterms:identifier xml:lang="en">admssw:release</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - release</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">The release relationship associates a Software Package with a Software Release.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+    <vann:usageNote xml:lang="en">Used in RADion and thus ADMS.SW to link to the organisation responsible for the publication of the Asset, Repository or Distribution. Note that the range is dcterms:Agent.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:publisher</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - publisher</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:publisher property fully represents the RADion and ADMS.SW relationship of the same name</rdfs:comment>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/status">
+    <vann:usageNote xml:lang="en">Ideally, the range of this property is skos:Concept.</vann:usageNote>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <dcterms:identifier xml:lang="en">admssw:status</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Package - status</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">The status of the software project, asset, or package.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+
+<!-- Software Repository -->
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/SoftwareRepository">
+    <dcterms:identifier xml:lang="en">admssw:SoftwareRepository</dcterms:identifier>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/radion#Repository"/>
+    <rdfs:label xml:lang="en">Software Repository</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:comment xml:lang="en">A Software Repository is a system or service that provides facilities for storage and maintenance of descriptions of Software Projects, Software Releases and Software Distributions, and functionality that allows users to search and access these descriptions. A Software Repository will typically contain descriptions of several Software Projects, Software Releases and related Software Distributions.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+
+  <rdf:Property rdf:about="&adms;accessURL"> 
+    <rdfs:label xml:lang="en">Software Repository - access URL</rdfs:label>
+    <rdfs:comment xml:lang="en">The URL of the Repository or Distribution. The range of adms:accessURL is xsd:anyURI</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="&documentation;" />
+    <rdfs:range rdf:resource="&xsd;anyURI" />
+    <dcterms:identifier>adms:accessURL</dcterms:identifier>
+  </rdf:Property>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <vann:usageNote xml:lang="en">The ADMS.SW and RADion RDF Schemas use this to provide the creation date of this version of the Repository, Asset or Package. RADion expects a datatyped value and for it to be conformant with ISO 8601, preferably using an xsd data type.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:created</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Repository - date of creation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:created property fully represents the ADMS.SW property 'date of creation'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
+    <vann:usageNote xml:lang="en">RADion uses this to provide the date of latest update of the Repository, Asset or Package. RADion expects a datatyped value and for it to be conformant with ISO 8601, preferably using an xsd data type.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:modified</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Repository - date of last modification</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:modified property fully represents the RADion and ADMS.SW property Date of Last Modification.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to provide descriptive text for the Software Repository, Software Release or Software Package.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:description</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Repository - description</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:description property fully covers the ADMS.SW property of the same name.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <vann:usageNote xml:lang="en">ADMS.SW uses this to provide the name or label of any class. In cases that a Software Release has parallel names, for example if more than one official name exists, or if an organisation or country has more than one official language, this field can be repeated for all name variants</vann:usageNote>
+    <dcterms:identifier xml:lang="en">rdfs:label</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Repository - name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+    <rdfs:comment xml:lang="en">The rdfs:label property fully represents the RADion and ADMS.SW properties of name and label.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#supportedSchema">
+    <dcterms:identifier xml:lang="en">adms:supportedSchema</dcterms:identifier>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:label xml:lang="en">Software Repository - supported schema</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/adms/release/100"/>
+    <rdfs:comment xml:lang="en">A schema according to which the Repository can provide data about its content, e.g. 'ADMS.SW v1.0'</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/hasPart">
+    <vann:usageNote xml:lang="en">RADion uses dcterms:hasPart to link a Repository to an Asset.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:hasPart</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Repository - includes</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:hasPart property fully represents the RADion relationship 'includes'.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+    <vann:usageNote xml:lang="en">Used in RADion and thus ADMS.SW to link to the organisation responsible for the publication of the Asset, Repository or Distribution. Note that the range is dcterms:Agent.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:publisher</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Repository - publisher</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:publisher property fully represents the RADion and ADMS.SW relationship of the same name</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/spatial">
+    <vann:usageNote xml:lang="en">RADion uses this to link to the geographic region or jurisdiction that the Asset or Repository applies to. Note that the range is dcterms:Location.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:spatial</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Repository - spatial coverage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:coverage property fully represents the RADion relationship of the same name</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/radion#themeTaxonomy">
+    <dcterms:identifier xml:lang="en">rad:themeTaxonomy</dcterms:identifier>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:label xml:lang="en">Software Repository - theme taxonomy</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/radion/release/100"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/radion#Asset"/>
+    <rdfs:comment xml:lang="en">The theme taxonomy relationship associates a Repository with a classification scheme for the assets within it. Its domain is rad:Repository and its range is skos:ConceptScheme.</rdfs:comment>
+  </rdf:Description>
+
+
+<!-- Agent -->
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/Agent">
+    <vann:usageNote xml:lang="en">The dcterms:Agent class (or a sub class of it) is used in RADion to represent the publisher of a Repository or its components.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:Agent</dcterms:identifier>
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">A resource that acts or has the power to act.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <vann:usageNote xml:lang="en">ADMS.SW uses this to provide the name or label of any class. In cases that a Software Release has parallel names, for example if more than one official name exists, or if an organisation or country has more than one official language, this field can be repeated for all name variants</vann:usageNote>
+    <dcterms:identifier xml:lang="en">rdfs:label</dcterms:identifier>
+    <rdfs:label xml:lang="en">Agent - name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+    <rdfs:comment xml:lang="en">The rdfs:label property fully represents the RADion and ADMS.SW properties of name and label.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Property rdf:about="http://purl.org/dc/terms/type">
+    <rdfs:label xml:lang="en">Agent - type</rdfs:label>
+    <rdfs:comment xml:lang="en" rdf:parseType="Literal">The <xh:a xh:href="&dcterms;type">dcterms:type</xh:a> property fully represents the ADMS property of asset type, and the type properties of both the Licence and Publisher classes. The range of dcterms:type is rdfs:Class.</rdfs:comment>
+    <vann:usageNote xml:lang="en">Used in ADMS to link an Asset to its Asset Type.</vann:usageNote>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <dcterms:identifier>dcterms:type</dcterms:identifier>
+  </rdf:Property>
+
+<!-- Contact Information -->
+
+
+  <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#VCard">
+    <vann:usageNote rdf:parseType="Literal">ADMS.SW uses VCard to provide contact information regarding a Software Release, including e-mail, address, name and associated Web page information. See <xh:a xmlns:xh="http://www.w3.org/1999/xhtml" xh:href="http://www.w3.org/TR/vcard-rdf/">Representing vCard Objects in RDF</xh:a> for details of this widely used specification.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">vcard:VCard</dcterms:identifier>
+    <rdfs:label xml:lang="en">Contact Information</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/TR/vcard-rdf/"/>
+    <rdfs:comment xml:lang="en">VCard fully represents the ADMS.SW class of Contact Information</rdfs:comment>
+  </rdf:Description>
+
+
+
+
+<!-- Documentation -->
+
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Document">
+    <vann:usageNote rdf:parseType="Literal">Used in ADMS.SW specifically for the class of documents that further describe a Software Asset or give guidelines for its use. ADMS.SW expects all documents to have a title (use <xh:a xmlns:xh="http://www.w3.org/1999/xhtml" xh:href="http://purl.org/dc/terms/title">dcterms:title</xh:a>).</vann:usageNote>
+    <dcterms:identifier xml:lang="en">foaf:Document</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <rdfs:label xml:lang="en">Documentation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/spec/"/>
+    <rdfs:comment xml:lang="en">The foaf:Document class fully represents the ADMS.SW concept 'Documentation'.</rdfs:comment>
+  </rdf:Description>
+
+
+<!-- LicenseDocument -->
+
+
+  <rdf:Description rdf:about="http://purl.org/dc/terms/LicenseDocument">
+    <vann:usageNote xml:lang="en">Used in RADion to provide the conditions or restrictions that apply to the use of a Distribution, e.g. whether it is in the public domain, or that some restrictions apply like in cases attribution is required, or the Asset can only be used for non-commercial purposes etc.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">dcterms:LicenseDocument</dcterms:identifier>
+    <rdfs:label xml:lang="en">License</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <rdfs:comment xml:lang="en">The dcterms:LicenseDocument class fully represents the RADion concept of a Licence</rdfs:comment>
+  </rdf:Description>
+
+
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <vann:usageNote xml:lang="en">ADMS.SW uses this to provide the name or label of any class. In cases that a Software Release has parallel names, for example if more than one official name exists, or if an organisation or country has more than one official language, this field can be repeated for all name variants</vann:usageNote>
+    <dcterms:identifier xml:lang="en">rdfs:label</dcterms:identifier>
+    <rdfs:label xml:lang="en">Licence - name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+    <rdfs:comment xml:lang="en">The rdfs:label property fully represents the RADion and ADMS.SW properties of name and label.</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Property rdf:about="http://purl.org/dc/terms/type">
+    <rdfs:label xml:lang="en">Licence - type</rdfs:label>
+    <rdfs:comment xml:lang="en" rdf:parseType="Literal">The <xh:a xh:href="&dcterms;type">dcterms:type</xh:a> property fully represents the ADMS property of asset type, and the type properties of both the Licence and Publisher classes. The range of dcterms:type is rdfs:Class.</rdfs:comment>
+    <vann:usageNote xml:lang="en">Used in ADMS to link an Asset to its Asset Type.</vann:usageNote>
+    <rdfs:isDefinedBy rdf:resource="&dcDoc;" />
+    <dcterms:identifier>dcterms:type</dcterms:identifier>
+  </rdf:Property>
+
+
+
+<!-- Data Set -->
+
+
+  <rdf:Description rdf:about="http://purl.org/linked-data/cube#DataSet">
+    <vann:usageNote rdf:parseType="Literal">ADMS.SW uses the RDF Data Qube Vocbulary to exchange metrics about a software project or software release.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">qb:DataSet</dcterms:identifier>
+    <rdfs:label xml:lang="en">Data Set</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/linked-data/cube#"/>
+    <rdfs:comment xml:lang="en">qb:DataSet fully represents the ADMS.SW class 'Data Set'.</rdfs:comment>
+  </rdf:Description>
+
+
+<!-- Measures: a number of measures that can be expected in a software metrics data set. See: http://purl.org/linked-data/cube#MeasureProperty -->
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/downloadNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <dcterms:identifier xml:lang="en">admssw:downloadNumber</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: number of downloads</rdfs:label>
+    <rdfs:comment xml:lang="en">The number of times a software package has been downloaded.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/installationNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <dcterms:identifier xml:lang="en">admssw:installationNumber</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: number of installations</rdfs:label>
+    <rdfs:comment xml:lang="en">The number known instances of software package that have been installed.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/userNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <dcterms:identifier xml:lang="en">admssw:userNumber</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: number of users</rdfs:label>
+    <rdfs:comment xml:lang="en">The number of known users of a software release.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/commitNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <dcterms:identifier xml:lang="en">admssw:commitNumber</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: number of commits</rdfs:label>
+    <rdfs:comment xml:lang="en">The number of times code for the asset has been committed to the forge.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/linesOfCodeNumber">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <dcterms:identifier xml:lang="en">admssw:linesOfCodeNumber</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: number of lines of code</rdfs:label>
+    <rdfs:comment xml:lang="en">The number of lines of code within the asset (not including any dependencies).</rdfs:comment>
+    <vann:usageNote xml:lang="en">Observations for the measure 'number of lines of code' should include the dimension 'programming language'.</vann:usageNote>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/ticketLeadTime">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <dcterms:identifier xml:lang="en">admssw:ticketLeadTime</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: ticket lead time</rdfs:label>
+    <rdfs:comment xml:lang="en">The time between opening and closing a support ticket in milliseconds.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/effort">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <dcterms:identifier xml:lang="en">admssw:effort</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: effort</rdfs:label>
+    <rdfs:comment xml:lang="en">The effort spent (expressed in personhours) on producing a new software release, not counting the effort spent on previous software releases.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/cumulativeEffort">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <dcterms:identifier xml:lang="en">admssw:cumulativeEffort</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/linked-data/sdmx/2009/measure#obsValue"/>
+    <rdfs:label xml:lang="en">measure: cumulative effort</rdfs:label>
+    <rdfs:comment xml:lang="en">The total effort spent (expressed in personhours) on producing a software release, including the effort spent on previous releases.</rdfs:comment>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#MeasureProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+<!-- Dimensions: a number of dimensions that can be expected in a software metrics data set. See: http://purl.org/linked-data/cube#DimensionProperty -->
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/agentDimension">
+    <rdfs:comment xml:lang="en">The agent category to which a measured observation applies.</rdfs:comment>
+    <dcterms:identifier xml:lang="en">admssw:agentDimension</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:label xml:lang="en">dimension: agent dimension</rdfs:label>
+    <qb:concept rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/releaseDimension">
+    <rdfs:comment xml:lang="en">The release category to which a measured observation applies.</rdfs:comment>
+    <dcterms:identifier xml:lang="en">admssw:releaseDimension</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:label xml:lang="en">dimension: release dimension</rdfs:label>
+    <qb:concept rdf:resource="http://www.w3.org/ns/radion#Asset"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/packageDimension">
+    <rdfs:comment xml:lang="en">The software package category to which a measured observation applies.</rdfs:comment>
+    <dcterms:identifier xml:lang="en">admssw:packageDimension</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:label xml:lang="en">dimension: package dimension</rdfs:label>
+    <qb:concept rdf:resource="http://www.w3.org/ns/radion#Distribution"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/linked-data/sdmx/2009/dimension#timePeriod">
+    <rdfs:isDefinedBy rdf:resource="http://sdmx.org/wp-content/uploads/2009/01/01_sdmx_cog_annex_1_cdc_2009.pdf"/>
+    <dcterms:identifier xml:lang="en">sdmx-dimension:timePeriod</dcterms:identifier>
+    <rdfs:comment xml:lang="en">The period of time or point in time to which the measured observation refers.</rdfs:comment>
+    <rdfs:label xml:lang="en">dimension: time dimension</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.org/adms/sw/programmingLanguageDimension">
+    <rdfs:comment xml:lang="en">The programming language dimension to which a measured observation applies.</rdfs:comment>
+    <dcterms:identifier xml:lang="en">admssw:programmingLanguageDimension</dcterms:identifier>
+    <rdfs:isDefinedBy rdf:resource="http://joinup.ec.europa.eu/asset/adms_foss/release/release100"/>
+    <rdfs:label xml:lang="en">dimension: programming language dimension</rdfs:label>
+    <qb:concept rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://purl.org/linked-data/cube#DimensionProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
+    <rdfs:label xml:lang="en">Intended Audience</rdfs:label>
+    <rdfs:label xml:lang="en">Operating System</rdfs:label>
+    <rdfs:comment rdf:parseType="Literal">
+	<p>The Conceptual Model includes a 'Code' datatype that is used by several classes. This is expressed using the <a> 	href="http://www.w3.org/TR/skos-primer/">SKOS vocabulary</a> with a particular 'code' usually being a skos:Concept that is part of a 		scheme. The intention is that the skos:Concept class be used as follows: </p>
+	<ul> 
+		<li> for the content property, use skos:notation</li>
+		<li>he 'list' property will be taken care of by means of the skos:inScheme property;</li>
+		<li>the list agency property is likely to be applied to the scheme as a whole for which dcterms:creator is appropriate </li>
+	
+		<li>the list version property can be fulfilled using schema:version (see <a 			href="http://schema.org/CreativeWork">http://schema.org/CreativeWork</a></li>
+	</ul>
+
+    </rdfs:comment>
+    <rdfs:label xml:lang="en">Topic</rdfs:label>
+    <rdfs:comment rdf:parseType="Literal">The skos:Concept class fully represents the ADMS.SW classes 'Intended Audience', 'Locale', 'Operating System', 'Status', 'Topic', and 'User Interface Type' (see section on the <xh:a xmlns:xh="http://www.w3.org/1999/xhtml" xh:href="#Code">Code</xh:a> datatype for details).</rdfs:comment>
+    <rdfs:label xml:lang="en">User Interface Type</rdfs:label>
+    <rdfs:label xml:lang="en">Locale</rdfs:label>
+    <dcterms:identifier xml:lang="en">skos:Concept</dcterms:identifier>
+    <rdfs:label xml:lang="en">Programming Language</rdfs:label>
+    <rdfs:label xml:lang="en">Status</rdfs:label>
+  </rdf:Description>
+
+
+
+
+<!-- Checksum -->
+
+
+  <rdf:Description rdf:about="http://www.spdx.org/rdf/terms#Checksum">
+    <dcterms:identifier xml:lang="en">spdx:Checksum</dcterms:identifier>
+    <rdfs:label xml:lang="en">Checksum</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.spdx.org/rdf/terms#"/>
+    <rdfs:comment xml:lang="en">The SPDX class 'Checksum' fully represents the ADMS.SW type with the same name. A Checksum is value that allows the contents of a file to be authenticated. Even small changes to the content of the file will change it's checksum. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented.</rdfs:comment>
+  </rdf:Description>
+
+
+<!-- Software Identifier -->
+
+
+  <rdf:Description rdf:about="http://standards.iso.org/iso/19770/-2/2009/SoftwareId">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to aligin with the software identifying system in the ISO19770-2:2009 standard.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">swid:SoftwareId</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.iso.org/iso/catalogue_detail.htm?csnumber=53670"/>
+    <rdfs:comment xml:lang="en" rdf:parseType="Literal">
+	<p>A Software Identifier is a complex type (based on the software identifying system in the ISO19770-2:2009 software identification tag data model [ISO19770-2]) consisting of: </p>
+	<ul>
+	<li>a unique token within the regid domain of the tag creator; and</li>
+	<li>a tag creator regid.</li>
+	</ul>
+    </rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://standards.iso.org/iso/19770/-2/2009/unique_id">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to aligin with the software identifying system in the ISO19770-2:2009 standard.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">swid:unique_id</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Identifier - unique_id</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.iso.org/iso/catalogue_detail.htm?csnumber=53670"/>
+    <rdfs:comment xml:lang="en">A unique token within the regid domain of the tag creator.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://standards.iso.org/iso/19770/-2/2009/SoftwareId"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://standards.iso.org/iso/19770/-2/2009/tag_creator_regid">
+    <vann:usageNote xml:lang="en">Used in ADMS.SW to aligin with the software identifying system in the ISO19770-2:2009 standard.</vann:usageNote>
+    <dcterms:identifier xml:lang="en">swid:tag_creator_regid</dcterms:identifier>
+    <rdfs:label xml:lang="en">Software Identifier - tag_creator_regid</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://www.iso.org/iso/catalogue_detail.htm?csnumber=53670"/>
+    <rdfs:comment xml:lang="en">A tag creator regid, uniquely identifying a tag creator and/or subdomain.</rdfs:comment>
+    <rdfs:range rdf:resource="http://standards.iso.org/iso/19770/-2/2009/RegistrationId"/>
+    <rdfs:domain rdf:resource="http://standards.iso.org/iso/19770/-2/2009/SoftwareId"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+
+<!-- Identifier -->
+
+
+  <rdf:Description rdf:about="http://www.w3.org/ns/adms#Identifier">
+    <dcterms:identifier xml:lang="en">adms:Identifier</dcterms:identifier>
+    <rdfs:label xml:lang="en">Identifier</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://joinup.ec.europa.eu/asset/adms/release/100"/>
+    <rdfs:comment rdf:parseType="Literal">
+	<p> This class is based on the UN/CEFACT Identifier complex type defined in See Section 5.8 of <a 	href="http://www.unece.org/fileadmin/DAM/cefact/codesfortrade/CCTS/CCTS-DTCatalogueVersion3p1.pdf">Core Components Data Type Catalogue 		Version 3.1</a>. The various properties can be fulfilled as follows:</p>
+	<ul><li> use <a href="http://www.w3.org/2004/02/skos/core#notation">skos:notation</a> to provide the actual identifier (the Identifier 		class is effectively meaningless without this property and conceptually it is mandatory)</li> 
+	<li> use <a href="http://purl.org/dc/terms/type">dcterms:type</a> to provide an identifier for the type of identifier issued (the 	identifier scheme)</li>
+	<li> use <a href="http://www.w3.org/ns/adms#schemeversion">adms:schemeVersion</a> to identify the version of the identifier scheme;</li>
+	<li> use <a href="http://www.w3.org/ns/adms#schemeagency">adms:schemeAgency</a> to provide the name of the agency that created the identifier (as an 	rdfs:Literal).</li>
+	</ul>
+	<p>Although not part of the ADMS conceptual model, it may be useful to provide further properties to the Identifier 	class:</p>
+	<ul><li>use <a href="http://purl.org/dc/terms/creator"> dcterms:creator</a> to link to a URI of an Agent class describing the issuing 	Agency;</li>
+	<li>use <a href="http://purl.org/dc/terms/created">dcterms:created</a> to provide the date on which the identifier was 	issued.</li></ul>
+  </rdfs:comment>
+  </rdf:Description>
+
+<!-- Intendend Audience, Locale, Operating System, Programming Language, Status, Topic, User Interface Type -->
+
+  <rdf:Description rdf:about="&skos;Concept">
+    <rdfs:label xml:lang="en">Intendend Audience, Locale, Operating System, Programming Language, Status, Topic, User Interface Type</rdfs:label>
+    <rdfs:comment xml:lang="en" rdf:parseType="Literal">The skos:Concept class fully represents the ADMS.SW classes of Intendend Audience, Locale, Operating System, Programming Language, Status, Topic, User Interface Type (see section on the <xh:a xh:href="#Code">Code</xh:a> datatype for details).</rdfs:comment>
+    <vann:usageNote xml:lang="en">ADMS.SW uses SKOS Concepts to provide an indication of the maturity of an Asset or Distribution.</vann:usageNote>
+    <rdfs:isDefinedBy rdf:resource="&skosDoc;" />
+    <dcterms:identifier>skos:Concept</dcterms:identifier>
+  </rdf:Description>
+
+
+
+
+</rdf:RDF>
