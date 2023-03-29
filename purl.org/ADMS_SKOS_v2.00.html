@@ -1,0 +1,670 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>ADMS Controlled Vocabularies - SKOS</title><meta http-equiv="Access-Control-Allow-Origin" content="*"><style type="text/css">
+	body {font-family:sans-serif} 
+    h1 {color: white; background-color:#002060}
+    header#branding {
+      background-color: #F59509;
+      min-height:70px;
+      width:100%;
+      display:table;
+    }
+    header#branding img {float:left;}
+    header#branding h1 {
+      display:table-cell;
+      vertical-align:middle;
+      background: #F59509;
+    } 
+	ol.folded {
+		display: none;
+	}
+	ol.unfolded {
+	}
+	</style><script type="text/javascript">
+
+		function fold(id)
+		{
+			var e = document.getElementById(id);
+			e.className = e.className === 'folded' ? 'unfolded' : 'folded';
+		}
+
+</script>
+</head>
+<body>
+<header id="branding">
+<a href="https://joinup.ec.europa.eu/release/adms-ap-joinup-version/20">
+<img src="https://joinup.ec.europa.eu/sites/default/files/styles/image_style_collection_logo/public/solution/logo/adms.png" alt="AMDS-AP" width="70" height="70"></a>
+<h1>ADMS Controlled Vocabularies</h1>
+</header>
+<p>
+The ADMS Controlled Vocabularies contain a number of vocabularies with terms that can be used as objects in RDF properties, in particular with properties defined in the <a href="https://www.w3.org/TR/vocab-adms/">Asset Description Metadata Schema (ADMS)</a>.
+<br>
+These vocabularies were developed and are maintained under the <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic">SEMIC activity</a> in the context of the European Commission's <a href="http://ec.europa.eu/archives/isa/">ISA</a> and <a href="https://ec.europa.eu/isa2/">ISA²</a> Programmes. All distributions of the ADMS Controlled Vocabularies are available under the <a href="https://joinup.ec.europa.eu/licence/isa-open-metadata-licence-v11">ISA Open Metadata Licence v1.1</a>.
+<br>
+The following vocabularies are descibed below:
+<ul>
+   <li>
+      <a href="#AT1">Asset Type</a>
+   </li>
+   <li>
+      <a href="#CT1">Change Type</a>
+   </li>
+   <li>
+      <a href="#IL1">Interoperability Level</a>
+   </li>
+   <li>
+      <a href="#LT1">Licence Type version 1.0</a>
+   </li>
+   <li>
+      <a href="#LT2">Licence Type version 2.0</a>
+   </li>
+   <li>
+      <a href="#PT1">Publisher Type</a>
+   </li>
+   <li>
+      <a href="#RT1">Representation Technique</a>
+   </li>
+   <li>
+      <a href="#S1">Status</a>
+   </li>
+</ul>
+For further information and feedback, please contact <a href="mailto:contact@semic.eu">contact@semic.eu</a>.
+<br>
+Date of last modification: 30 March 2018
+</p>
+<p><strong>Available formats</strong>: <a href="https://joinup.ec.europa.eu/../ADMS_SKOS_v2.0.0.html">HTML+RDFa</a>, <a href="https://joinup.ec.europa.eu/../ADMS_SKOS_v2.0.0.ttl">Turtle</a>, <a href="https://joinup.ec.europa.eu/../ADMS_SKOS_v1.00.rdf">RDF+XML</a></p>
+
+<hr>
+
+<h2 id="AT1" style="clear: both;padding:40px 0 0 0">Asset Type</h2><p>
+				URI:<a href="http://purl.org/adms/assettype/1.0">http://purl.org/adms/assettype/1.0</a><br>
+				rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a><br><span about="http://purl.org/adms/assettype/1.0" property="http://www.w3.org/2000/01/rdf-schema#label" typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" content="Asset Type"></span><a name="http://purl.org/adms/assettype/1.0"></a></p><p><a href="#" onclick="fold('http://purl.org/adms/assettype/1.0')">+ skos:hasTopConcept</a></p><ol id="http://purl.org/adms/assettype/1.0" class="unfolded"><li><strong><span about="http://purl.org/adms/assettype/CodeList" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">CodeList</span></strong><br><a href="http://purl.org/adms/assettype/CodeList">http://purl.org/adms/assettype/CodeList</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/CodeList" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Code List</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/CodeList" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">Complete set of data element values of a coded simple data element  [ISO 9735-1:2002, 4.14].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/CodeList" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/CoreComponent" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">CoreComponent</span></strong><br><a href="http://purl.org/adms/assettype/CoreComponent">http://purl.org/adms/assettype/CoreComponent</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/CoreComponent" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Core Component</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/CoreComponent" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">A
+ core component is a context-free semantic building block for creating 
+clear and meaningful data models, vocabularies, and information exchange
+ packages [UN/CEFACT CCTS ].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/CoreComponent" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/DomainModel" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">DomainModel</span></strong><br><a href="http://purl.org/adms/assettype/DomainModel">http://purl.org/adms/assettype/DomainModel</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/DomainModel" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Domain Model</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/DomainModel" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">A
+ domain model is a conceptual view of a system or an information 
+exchange that identifies the entities involved and their relationships 
+[NIEM Glossary ].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/DomainModel" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/InformationExchangePackageDescription" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">InformationExchangePackageDescription</span></strong><br><a href="http://purl.org/adms/assettype/InformationExchangePackageDescription">http://purl.org/adms/assettype/InformationExchangePackageDescription</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/InformationExchangePackageDescription" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Information Exchange Package Description</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/InformationExchangePackageDescription" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">A
+ collection of artifacts that define and describe the structure and 
+content of an information exchange  [NIEM Glossary]. An Information 
+Exchange Package Description has a specific information exchange context
+ and may refer to other semantic assets.</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/InformationExchangePackageDescription" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/Mapping" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Mapping</span></strong><br><a href="http://purl.org/adms/assettype/Mapping">http://purl.org/adms/assettype/Mapping</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Mapping" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Mapping</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Mapping" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">relationship between a concept in one vocabulary and one or more concepts in another [ISO/DIS 25964-2].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/Mapping" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/NameAuthorityList" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NameAuthorityList</span></strong><br><a href="http://purl.org/adms/assettype/NameAuthorityList">http://purl.org/adms/assettype/NameAuthorityList</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/NameAuthorityList" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Name Authority List</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/NameAuthorityList" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">controlled vocabulary for use in naming particular entities consistently [ISO/DIS 25964-2].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/NameAuthorityList" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/Ontology" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Ontology</span></strong><br><a href="http://purl.org/adms/assettype/Ontology">http://purl.org/adms/assettype/Ontology</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Ontology" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Ontology</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Ontology" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">A formal, explicit specification of a shared conceptualization [ISO/DIS 25964-2].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/Ontology" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/Schema" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Schema</span></strong><br><a href="http://purl.org/adms/assettype/Schema">http://purl.org/adms/assettype/Schema</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Schema" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Schema</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Schema" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">A schema is a concrete view on a system or information exchange, describing the structure, content, and semantics of data.</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/Schema" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/ServiceDescription" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">ServiceDescription</span></strong><br><a href="http://purl.org/adms/assettype/ServiceDescription">http://purl.org/adms/assettype/ServiceDescription</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/ServiceDescription" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Service Description</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/ServiceDescription" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">A service description is a set of documents that describe the interface to and semantics of a service [W3C WS-GLOSS ].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/ServiceDescription" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/SyntaxEncodingScheme" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">SyntaxEncodingScheme</span></strong><br><a href="http://purl.org/adms/assettype/SyntaxEncodingScheme">http://purl.org/adms/assettype/SyntaxEncodingScheme</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/SyntaxEncodingScheme" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Syntax Encoding Scheme</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/SyntaxEncodingScheme" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">Syntax
+ Encoding Schemes indicate that the value is a string formatted in 
+accordance with a formal notation, such as "2000-01-01" as the standard 
+expression of a date. [DCMI Glossary].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/SyntaxEncodingScheme" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/Taxonomy" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Taxonomy</span></strong><br><a href="http://purl.org/adms/assettype/Taxonomy">http://purl.org/adms/assettype/Taxonomy</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Taxonomy" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Taxonomy</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Taxonomy" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">scheme
+ of categories and subcategories that can be used to sort and otherwise 
+organize items of knowledge or information [ISO/DIS 25964-2]. </span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/Taxonomy" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/assettype/Thesaurus" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Thesaurus</span></strong><br><a href="http://purl.org/adms/assettype/Thesaurus">http://purl.org/adms/assettype/Thesaurus</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Thesaurus" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Thesaurus</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#definition">skos:definition</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/assettype/Thesaurus" property="http://www.w3.org/2004/02/skos/core#definition" xml:lang="en">controlled
+ and structured vocabulary in which concepts are represented by terms, 
+organized so that relationships between concepts are made explicit, and 
+preferred terms are accompanied by lead-in entries for synonyms or 
+quasi-synonyms  [ISO 25964-1:2011].</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/assettype/Thesaurus" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/assettype/1.0</span><br></li></ol>
+
+						
+<hr>
+
+<h2 id="CT1" style="clear: both;padding:40px 0 0 0">Change Type</h2>
+<p>
+   URI:<a href="http://purl.org/adms/changetype/1.0">http://purl.org/adms/changetype/1.0</a>
+   <br>
+   rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a>
+   <br>
+   <span about="http://purl.org/adms/changetype/1.0" 
+      property="http://www.w3.org/2000/01/rdf-schema#label" 
+      typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" 
+      content="Change Type"></span>
+   <a name="http://purl.org/adms/changetype/1.0"></a>
+</p>
+<p>
+   <a href="#" onclick="fold('http://purl.org/adms/changetype/1.0')">+ skos:hasTopConcept</a>
+</p>
+<ol id="http://purl.org/adms/changetype/1.0" class="unfolded">
+   <li>
+      <strong>
+      <span about="http://purl.org/adms/changetype/created" 
+         typeof="http://www.w3.org/2004/02/skos/core#Concept" 
+         property="http://www.w3.org/2004/02/skos/core#notation">created</span>
+      </strong>
+      <br>
+      <a href="http://purl.org/adms/changetype/created">http://purl.org/adms/changetype/created</a>
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+      &nbsp;
+      "<span about="http://purl.org/adms/changetype/created" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">created</span>"@en
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+      &nbsp;
+      <span about="http://purl.org/adms/changetype/created" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/changetype/1.0</span>
+      <br>
+   </li>
+   <li>
+      <strong>
+      <span about="http://purl.org/adms/changetype/updated" 
+         typeof="http://www.w3.org/2004/02/skos/core#Concept" 
+         property="http://www.w3.org/2004/02/skos/core#notation">updated</span>
+      </strong>
+      <br>
+      <a href="http://purl.org/adms/changetype/updated">http://purl.org/adms/changetype/updated</a>
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+      &nbsp;
+      "<span about="http://purl.org/adms/changetype/updated" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">updated</span>"@en
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+      &nbsp;
+      <span about="http://purl.org/adms/changetype/updated" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/changetype/1.0</span>
+      <br>
+   </li>
+   <li>
+      <strong>
+      <span about="http://purl.org/adms/changetype/deleted" 
+         typeof="http://www.w3.org/2004/02/skos/core#Concept" 
+         property="http://www.w3.org/2004/02/skos/core#notation">deleted</span>
+      </strong>
+      <br>
+      <a href="http://purl.org/adms/changetype/deleted">http://purl.org/adms/changetype/deleted</a>
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+      &nbsp;
+      "<span about="http://purl.org/adms/changetype/deleted" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">deleted</span>"@en
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+      &nbsp;
+      <span about="http://purl.org/adms/changetype/deleted" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/changetype/1.0</span>
+      <br>
+   </li>
+</ol>
+
+<hr>
+
+<h2 id="IL1" style="clear: both;padding:40px 0 0 0">Interoperability Level</h2><p>
+				URI:<a href="http://purl.org/adms/interoperabilitylevel/1.0">http://purl.org/adms/interoperabilitylevel/1.0</a><br>
+				rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a><br><span about="http://purl.org/adms/interoperabilitylevel/1.0" property="http://www.w3.org/2000/01/rdf-schema#label" typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" content="Interoperability Level"></span><a name="http://purl.org/adms/interoperabilitylevel/1.0"></a></p><p><a href="#" onclick="fold('http://purl.org/adms/interoperabilitylevel/1.0')">+ skos:hasTopConcept</a></p><ol id="http://purl.org/adms/interoperabilitylevel/1.0" class="unfolded"><li><strong><span about="http://purl.org/adms/interoperabilitylevel/Legal" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Legal</span></strong><br><a href="http://purl.org/adms/interoperabilitylevel/Legal">http://purl.org/adms/interoperabilitylevel/Legal</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/interoperabilitylevel/Legal" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Legal</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/interoperabilitylevel/Legal" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/interoperabilitylevel/1.0</span><br></li><li><strong><span about="http://purl.org/adms/interoperabilitylevel/Organisational" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Organisational</span></strong><br><a href="http://purl.org/adms/interoperabilitylevel/Organisational">http://purl.org/adms/interoperabilitylevel/Organisational</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/interoperabilitylevel/Organisational" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Organisational</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/interoperabilitylevel/Organisational" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/interoperabilitylevel/1.0</span><br></li><li><strong><span about="http://purl.org/adms/interoperabilitylevel/Political" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Political</span></strong><br><a href="http://purl.org/adms/interoperabilitylevel/Political">http://purl.org/adms/interoperabilitylevel/Political</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/interoperabilitylevel/Political" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Political</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/interoperabilitylevel/Political" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/interoperabilitylevel/1.0</span><br></li><li><strong><span about="http://purl.org/adms/interoperabilitylevel/Semantic" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Semantic</span></strong><br><a href="http://purl.org/adms/interoperabilitylevel/Semantic">http://purl.org/adms/interoperabilitylevel/Semantic</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/interoperabilitylevel/Semantic" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Semantic</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/interoperabilitylevel/Semantic" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/interoperabilitylevel/1.0</span><br></li><li><strong><span about="http://purl.org/adms/interoperabilitylevel/Technical" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Technical</span></strong><br><a href="http://purl.org/adms/interoperabilitylevel/Technical">http://purl.org/adms/interoperabilitylevel/Technical</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/interoperabilitylevel/Technical" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Technical</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/interoperabilitylevel/Technical" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/interoperabilitylevel/1.0</span><br></li></ol>
+
+<hr>
+
+<h2 id="LT1" style="clear: both;padding:40px 0 0 0">Licence Type version 1.0</h2>
+<p>
+   URI:<a href="http://purl.org/adms/licencetype/1.0">http://purl.org/adms/licencetype/1.0</a>
+   <br>
+   rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a>
+   <br>
+   <span about="http://purl.org/adms/licencetype/1.0" 
+      property="http://www.w3.org/2000/01/rdf-schema#label" 
+	  typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" 
+	  content="Licence Type"></span>
+	<a name="http://purl.org/adms/licencetype/1.0"></a>
+</p>
+<p>
+   <a href="#" onclick="fold('http://purl.org/adms/licencetype/1.0')">+ skos:hasTopConcept</a>
+</p>
+<ol id="http://purl.org/adms/licencetype/1.0" class="unfolded">
+   <li>
+      <strong>
+      <span about="http://purl.org/adms/licencetype/Attribution" 
+         typeof="http://www.w3.org/2004/02/skos/core#Concept" 
+	     property="http://www.w3.org/2004/02/skos/core#notation">Attribution</span>
+      </strong>
+      <br>
+      <a href="http://purl.org/adms/licencetype/Attribution">http://purl.org/adms/licencetype/Attribution</a>
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+      &nbsp;
+      "<span about="http://purl.org/adms/licencetype/Attribution" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Attribution</span>"@en
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+      &nbsp;
+      <span about="http://purl.org/adms/licencetype/Attribution" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span>
+      <br>
+   </li>
+   <li>
+      <strong>
+	     <span about="http://purl.org/adms/licencetype/GrantBack" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">GrantBack</span>
+	  </strong>
+	  <br>
+	  <a href="http://purl.org/adms/licencetype/GrantBack">http://purl.org/adms/licencetype/GrantBack</a>
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	  &nbsp;
+	  "<span about="http://purl.org/adms/licencetype/GrantBack" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Grant back</span>"@en
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	  &nbsp;
+	  <span about="http://purl.org/adms/licencetype/GrantBack" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span>
+	  <br>
+	</li>
+	<li>
+	   <strong>
+	      <span about="http://purl.org/adms/licencetype/JurisdictionWithinTheEU" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">JurisdictionWithinTheEU</span>
+       </strong>
+	   <br>
+	   <a href="http://purl.org/adms/licencetype/JurisdictionWithinTheEU">http://purl.org/adms/licencetype/JurisdictionWithinTheEU</a>
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	   &nbsp;
+	   "<span about="http://purl.org/adms/licencetype/JurisdictionWithinTheEU" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Jurisdiction within the EU</span>"@en
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	   &nbsp;
+	   <span about="http://purl.org/adms/licencetype/JurisdictionWithinTheEU" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span>
+	   <br>
+   </li>
+   <li>
+      <strong>
+	     <span about="http://purl.org/adms/licencetype/KnownPatentEncumbrance" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">KnownPatentEncumbrance</span>
+      </strong>
+	  <br>
+	  <a href="http://purl.org/adms/licencetype/KnownPatentEncumbrance">http://purl.org/adms/licencetype/KnownPatentEncumbrance</a>
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	  &nbsp;
+	  "<span about="http://purl.org/adms/licencetype/KnownPatentEncumbrance" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Known patent encumbrance</span>"@en
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	  &nbsp;
+	  <span about="http://purl.org/adms/licencetype/KnownPatentEncumbrance" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span>
+	  <br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/NoDerivativeWork" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NoDerivativeWork</span></strong><br><a href="http://purl.org/adms/licencetype/NoDerivativeWork">http://purl.org/adms/licencetype/NoDerivativeWork</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/NoDerivativeWork" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">No derivative work</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/NoDerivativeWork" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/NominalCost" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NominalCost</span></strong><br><a href="http://purl.org/adms/licencetype/NominalCost">http://purl.org/adms/licencetype/NominalCost</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/NominalCost" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Nominal cost</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/licencetype/NominalCost" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/NonCommercialUseOnly" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NonCommercialUseOnly</span></strong><br><a href="http://purl.org/adms/licencetype/NonCommercialUseOnly">http://purl.org/adms/licencetype/NonCommercialUseOnly</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/NonCommercialUseOnly" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Non-commercial use only</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/NonCommercialUseOnly" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/OtherRestrictiveClauses" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">OtherRestrictiveClauses</span></strong><br><a href="http://purl.org/adms/licencetype/OtherRestrictiveClauses">http://purl.org/adms/licencetype/OtherRestrictiveClauses</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/OtherRestrictiveClauses" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Other restrictive clauses</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/OtherRestrictiveClauses" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/PublicDomain" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">PublicDomain</span></strong><br><a href="http://purl.org/adms/licencetype/PublicDomain">http://purl.org/adms/licencetype/PublicDomain</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/PublicDomain" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Public domain</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/PublicDomain" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">ReservedNames-Endorsement-OfficialStatus</span></strong><br><a href="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus">http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Reserved names / endorsement / official status</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/RoyaltiesRequired" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">RoyaltiesRequired</span></strong><br><a href="http://purl.org/adms/licencetype/RoyaltiesRequired">http://purl.org/adms/licencetype/RoyaltiesRequired</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/RoyaltiesRequired" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Royalties required</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/RoyaltiesRequired" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/UnknownIPR" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">UnknownIPR</span></strong><br><a href="http://purl.org/adms/licencetype/UnknownIPR">http://purl.org/adms/licencetype/UnknownIPR</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/UnknownIPR" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Unknown IPR</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/UnknownIPR" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/ViralEffect-ShareAlike" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">ViralEffect-ShareAlike</span></strong><br><a href="http://purl.org/adms/licencetype/ViralEffect-ShareAlike">http://purl.org/adms/licencetype/ViralEffect-ShareAlike</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/ViralEffect-ShareAlike" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Viral effect (a.k.a. Share-alike)</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/ViralEffect-ShareAlike" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/1.0</span><br>
+   </li>
+</ol>
+
+<hr>
+
+<h2 id="LT2" style="clear: both;padding:40px 0 0 0">Licence Type version 2.0</h2>
+<p>
+   URI:<a href="http://purl.org/adms/licencetype/2.0">http://purl.org/adms/licencetype/2.0</a>
+   <br>
+   rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a>
+   <br>
+   <span about="http://purl.org/adms/licencetype/2.0" 
+      property="http://www.w3.org/2000/01/rdf-schema#label" 
+	  typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" 
+	  content="Licence Type"></span>
+	<a name="http://purl.org/adms/licencetype/2.0"></a>
+</p>
+<p>
+   <a href="#" onclick="fold('http://purl.org/adms/licencetype/2.0')">+ skos:hasTopConcept</a>
+</p>
+<ol id="http://purl.org/adms/licencetype/2.0" class="unfolded">
+   <li>
+      <strong>
+      <span about="http://purl.org/adms/licencetype/Attribution" 
+         typeof="http://www.w3.org/2004/02/skos/core#Concept" 
+	     property="http://www.w3.org/2004/02/skos/core#notation">Attribution</span>
+      </strong>
+      <br>
+      <a href="http://purl.org/adms/licencetype/Attribution">http://purl.org/adms/licencetype/Attribution</a>
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+      &nbsp;
+      "<span about="http://purl.org/adms/licencetype/Attribution" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Attribution</span>"@en
+      <br>
+      <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+      &nbsp;
+      <span about="http://purl.org/adms/licencetype/Attribution" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span>
+      <br>
+   </li>
+   <li>
+      <strong>
+	     <span about="http://purl.org/adms/licencetype/GrantBack" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">GrantBack</span>
+	  </strong>
+	  <br>
+	  <a href="http://purl.org/adms/licencetype/GrantBack">http://purl.org/adms/licencetype/GrantBack</a>
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	  &nbsp;
+	  "<span about="http://purl.org/adms/licencetype/GrantBack" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Grant back</span>"@en
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	  &nbsp;
+	  <span about="http://purl.org/adms/licencetype/GrantBack" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span>
+	  <br>
+	</li>
+	<li>
+	   <strong>
+	      <span about="http://purl.org/adms/licencetype/ISOcompliant" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">ISOcompliant</span>
+       </strong>
+	   <br>
+	   <a href="http://purl.org/adms/licencetype/ISOcompliant">http://purl.org/adms/licencetype/OSIcompliant</a>
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	   &nbsp;
+	   "<span about="http://purl.org/adms/licencetype/OSIcompliant" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">OSI compliant</span>"@en
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	   &nbsp;
+	   <span about="http://purl.org/adms/licencetype/OSIcompliant" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span>
+	   <br>
+   </li>
+   <li>
+	   <strong>
+	      <span about="http://purl.org/adms/licencetype/JurisdictionWithinTheEU" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">JurisdictionWithinTheEU</span>
+       </strong>
+	   <br>
+	   <a href="http://purl.org/adms/licencetype/JurisdictionWithinTheEU">http://purl.org/adms/licencetype/JurisdictionWithinTheEU</a>
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	   &nbsp;
+	   "<span about="http://purl.org/adms/licencetype/JurisdictionWithinTheEU" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Jurisdiction within the EU</span>"@en
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	   &nbsp;
+	   <span about="http://purl.org/adms/licencetype/JurisdictionWithinTheEU" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span>
+	   <br>
+   </li>
+   <li>
+      <strong>
+	     <span about="http://purl.org/adms/licencetype/KnownPatentEncumbrance" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">KnownPatentEncumbrance</span>
+      </strong>
+	  <br>
+	  <a href="http://purl.org/adms/licencetype/KnownPatentEncumbrance">http://purl.org/adms/licencetype/KnownPatentEncumbrance</a>
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	  &nbsp;
+	  "<span about="http://purl.org/adms/licencetype/KnownPatentEncumbrance" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Known patent encumbrance</span>"@en
+	  <br>
+	  <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	  &nbsp;
+	  <span about="http://purl.org/adms/licencetype/KnownPatentEncumbrance" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span>
+	  <br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/NoDerivativeWork" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NoDerivativeWork</span></strong><br><a href="http://purl.org/adms/licencetype/NoDerivativeWork">http://purl.org/adms/licencetype/NoDerivativeWork</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/NoDerivativeWork" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">No derivative work</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/NoDerivativeWork" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/NominalCost" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NominalCost</span></strong><br><a href="http://purl.org/adms/licencetype/NominalCost">http://purl.org/adms/licencetype/NominalCost</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/NominalCost" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Nominal cost</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/NominalCost" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/NonCommercialUseOnly" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NonCommercialUseOnly</span></strong><br><a href="http://purl.org/adms/licencetype/NonCommercialUseOnly">http://purl.org/adms/licencetype/NonCommercialUseOnly</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/NonCommercialUseOnly" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Non-commercial use only</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/NonCommercialUseOnly" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+   </li>
+   <li>
+	   <strong>
+	      <span about="http://purl.org/adms/licencetype/NonISOcompliant" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NonISOcompliant</span>
+       </strong>
+	   <br>
+	   <a href="http://purl.org/adms/licencetype/NonISOcompliant">http://purl.org/adms/licencetype/NonISOcompliant</a>
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>
+	   &nbsp;
+	   "<span about="http://purl.org/adms/licencetype/NonISOcompliant" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Non-OSI compliant</span>"@en
+	   <br>
+	   <a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>
+	   &nbsp;
+	   <span about="http://purl.org/adms/licencetype/NonISOcompliant" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span>
+	   <br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/OtherRestrictiveClauses" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">OtherRestrictiveClauses</span></strong><br><a href="http://purl.org/adms/licencetype/OtherRestrictiveClauses">http://purl.org/adms/licencetype/OtherRestrictiveClauses</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/OtherRestrictiveClauses" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Other restrictive clauses</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/OtherRestrictiveClauses" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+   </li>
+   <li>
+<strong><span about="http://purl.org/adms/licencetype/PublicDomain" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">PublicDomain</span></strong><br><a href="http://purl.org/adms/licencetype/PublicDomain">http://purl.org/adms/licencetype/PublicDomain</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/PublicDomain" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Public domain</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/PublicDomain" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">ReservedNames-Endorsement-OfficialStatus</span></strong><br><a href="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus">http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Reserved names / endorsement / official status</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/RoyaltiesRequired" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">RoyaltiesRequired</span></strong><br><a href="http://purl.org/adms/licencetype/RoyaltiesRequired">http://purl.org/adms/licencetype/RoyaltiesRequired</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/RoyaltiesRequired" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Royalties required</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/RoyaltiesRequired" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/UnknownIPR" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">UnknownIPR</span></strong><br><a href="http://purl.org/adms/licencetype/UnknownIPR">http://purl.org/adms/licencetype/UnknownIPR</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/UnknownIPR" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Unknown IPR</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/UnknownIPR" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+  </li>
+  <li>
+<strong><span about="http://purl.org/adms/licencetype/ViralEffect-ShareAlike" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">ViralEffect-ShareAlike</span></strong><br><a href="http://purl.org/adms/licencetype/ViralEffect-ShareAlike">http://purl.org/adms/licencetype/ViralEffect-ShareAlike</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;"<span about="http://purl.org/adms/licencetype/ViralEffect-ShareAlike" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Viral effect (a.k.a. Share-alike)</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;<span about="http://purl.org/adms/licencetype/ViralEffect-ShareAlike" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/licencetype/2.0</span><br>
+   </li>
+</ol>
+
+<hr>
+
+<h2 id="PT1" style="clear: both;padding:40px 0 0 0">Publisher Type</h2><p>
+				URI:<a href="http://purl.org/adms/publishertype/1.0">http://purl.org/adms/publishertype/1.0</a><br>
+				rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a><br><span about="http://purl.org/adms/publishertype/1.0" property="http://www.w3.org/2000/01/rdf-schema#label" typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" content="Publisher Type"></span><a name="http://purl.org/adms/publishertype/1.0"></a></p><p><a href="#" onclick="fold('http://purl.org/adms/publishertype/1.0')">+ skos:hasTopConcept</a></p><ol id="http://purl.org/adms/publishertype/1.0" class="unfolded"><li><strong><span about="http://purl.org/adms/publishertype/Academia-ScientificOrganisation" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Academia-ScientificOrganisation</span></strong><br><a href="http://purl.org/adms/publishertype/Academia-ScientificOrganisation">http://purl.org/adms/publishertype/Academia-ScientificOrganisation</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/Academia-ScientificOrganisation" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Academia/Scientific organisation</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/Academia-ScientificOrganisation" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/Company" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Company</span></strong><br><a href="http://purl.org/adms/publishertype/Company">http://purl.org/adms/publishertype/Company</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/Company" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Company</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/Company" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/IndustryConsortium" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">IndustryConsortium</span></strong><br><a href="http://purl.org/adms/publishertype/IndustryConsortium">http://purl.org/adms/publishertype/IndustryConsortium</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/IndustryConsortium" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Industry consortium</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/IndustryConsortium" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/LocalAuthority" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">LocalAuthority</span></strong><br><a href="http://purl.org/adms/publishertype/LocalAuthority">http://purl.org/adms/publishertype/LocalAuthority</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/LocalAuthority" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Local Authority</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/LocalAuthority" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/NationalAuthority" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NationalAuthority</span></strong><br><a href="http://purl.org/adms/publishertype/NationalAuthority">http://purl.org/adms/publishertype/NationalAuthority</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/NationalAuthority" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">National authority</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/NationalAuthority" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/NonGovernmentalOrganisation" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NonGovernmentalOrganisation</span></strong><br><a href="http://purl.org/adms/publishertype/NonGovernmentalOrganisation">http://purl.org/adms/publishertype/NonGovernmentalOrganisation</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/NonGovernmentalOrganisation" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Non-Governmental Organisation</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/NonGovernmentalOrganisation" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/NonProfitOrganisation" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">NonProfitOrganisation</span></strong><br><a href="http://purl.org/adms/publishertype/NonProfitOrganisation">http://purl.org/adms/publishertype/NonProfitOrganisation</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/NonProfitOrganisation" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Non-Profit Organisation</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/NonProfitOrganisation" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/PrivateIndividual(s)" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">PrivateIndividual(s)</span></strong><br><a href="http://purl.org/adms/publishertype/PrivateIndividual(s)">http://purl.org/adms/publishertype/PrivateIndividual(s)</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/PrivateIndividual(s)" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Private Individual(s)</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/PrivateIndividual(s)" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/RegionalAuthority" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">RegionalAuthority</span></strong><br><a href="http://purl.org/adms/publishertype/RegionalAuthority">http://purl.org/adms/publishertype/RegionalAuthority</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/RegionalAuthority" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Regional authority</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/RegionalAuthority" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/StandardisationBody" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">StandardisationBody</span></strong><br><a href="http://purl.org/adms/publishertype/StandardisationBody">http://purl.org/adms/publishertype/StandardisationBody</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/StandardisationBody" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Standardisation body</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/StandardisationBody" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li><li><strong><span about="http://purl.org/adms/publishertype/SupraNationalAuthority" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">SupraNationalAuthority</span></strong><br><a href="http://purl.org/adms/publishertype/SupraNationalAuthority">http://purl.org/adms/publishertype/SupraNationalAuthority</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/publishertype/SupraNationalAuthority" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Supra-national authority</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/publishertype/SupraNationalAuthority" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/publishertype/1.0</span><br></li></ol>
+
+<hr>
+
+<h2 id="RT1" style="clear: both;padding:40px 0 0 0">Representation Technique</h2><p>
+				URI:<a href="http://purl.org/adms/representationtechnique/1.0">http://purl.org/adms/representationtechnique/1.0</a><br>
+				rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a><br><span about="http://purl.org/adms/representationtechnique/1.0" property="http://www.w3.org/2000/01/rdf-schema#label" typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" content="Representation Technique"></span><a name="http://purl.org/adms/representationtechnique/1.0"></a></p><p><a href="#" onclick="fold('http://purl.org/adms/representationtechnique/1.0')">+ skos:hasTopConcept</a></p><ol id="http://purl.org/adms/representationtechnique/1.0" class="unfolded"><li><strong><span about="http://purl.org/adms/representationtechnique/Archimate" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Archimate</span></strong><br><a href="http://purl.org/adms/representationtechnique/Archimate">http://purl.org/adms/representationtechnique/Archimate</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/Archimate" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Archimate</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/Archimate" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/BPMN" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">BPMN</span></strong><br><a href="http://purl.org/adms/representationtechnique/BPMN">http://purl.org/adms/representationtechnique/BPMN</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/BPMN" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Business Process Modeling Notation</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/BPMN" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/CommonLogic" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">CommonLogic</span></strong><br><a href="http://purl.org/adms/representationtechnique/CommonLogic">http://purl.org/adms/representationtechnique/CommonLogic</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/CommonLogic" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Common logic</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/CommonLogic" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/DTD" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">DTD</span></strong><br><a href="http://purl.org/adms/representationtechnique/DTD">http://purl.org/adms/representationtechnique/DTD</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/DTD" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Document Type Definition</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/DTD" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/Datalog" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Datalog</span></strong><br><a href="http://purl.org/adms/representationtechnique/Datalog">http://purl.org/adms/representationtechnique/Datalog</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/Datalog" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Datalog</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/Datalog" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/Diagram" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Diagram</span></strong><br><a href="http://purl.org/adms/representationtechnique/Diagram">http://purl.org/adms/representationtechnique/Diagram</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/Diagram" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Diagram</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/Diagram" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/Genericode" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Genericode</span></strong><br><a href="http://purl.org/adms/representationtechnique/Genericode">http://purl.org/adms/representationtechnique/Genericode</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/Genericode" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">genericode</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/Genericode" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/HumanLanguage" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">HumanLanguage</span></strong><br><a href="http://purl.org/adms/representationtechnique/HumanLanguage">http://purl.org/adms/representationtechnique/HumanLanguage</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/HumanLanguage" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Human Language</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/HumanLanguage" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/IDEF" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">IDEF</span></strong><br><a href="http://purl.org/adms/representationtechnique/IDEF">http://purl.org/adms/representationtechnique/IDEF</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/IDEF" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Integration Definition</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/IDEF" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/KIF" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">KIF</span></strong><br><a href="http://purl.org/adms/representationtechnique/KIF">http://purl.org/adms/representationtechnique/KIF</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/KIF" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Knowledge Interchange Format</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/KIF" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/OWL" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">OWL</span></strong><br><a href="http://purl.org/adms/representationtechnique/OWL">http://purl.org/adms/representationtechnique/OWL</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/OWL" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Web Ontology Language Full/DL/Lite</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/OWL" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/Prolog" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Prolog</span></strong><br><a href="http://purl.org/adms/representationtechnique/Prolog">http://purl.org/adms/representationtechnique/Prolog</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/Prolog" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Prolog</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/Prolog" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/RDFSchema" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">RDFSchema</span></strong><br><a href="http://purl.org/adms/representationtechnique/RDFSchema">http://purl.org/adms/representationtechnique/RDFSchema</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/RDFSchema" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Resource Description Framework Schema</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/RDFSchema" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/RIF" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">RIF</span></strong><br><a href="http://purl.org/adms/representationtechnique/RIF">http://purl.org/adms/representationtechnique/RIF</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/RIF" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Rule Interchange Format</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/RIF" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/RelaxNG" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">RelaxNG</span></strong><br><a href="http://purl.org/adms/representationtechnique/RelaxNG">http://purl.org/adms/representationtechnique/RelaxNG</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/RelaxNG" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Relax NG</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/RelaxNG" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/RuleML" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">RuleML</span></strong><br><a href="http://purl.org/adms/representationtechnique/RuleML">http://purl.org/adms/representationtechnique/RuleML</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/RuleML" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Rule Markup Langauge</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/RuleML" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/SBVR" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">SBVR</span></strong><br><a href="http://purl.org/adms/representationtechnique/SBVR">http://purl.org/adms/representationtechnique/SBVR</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/SBVR" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Semantics of Business Vocabulary and Rules</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/SBVR" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/SKOS" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">SKOS</span></strong><br><a href="http://purl.org/adms/representationtechnique/SKOS">http://purl.org/adms/representationtechnique/SKOS</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/SKOS" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Simple Knowledge Organization System</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/SKOS" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/SPARQL" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">SPARQL</span></strong><br><a href="http://purl.org/adms/representationtechnique/SPARQL">http://purl.org/adms/representationtechnique/SPARQL</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/SPARQL" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">SPARQL Query Language for RDF</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/SPARQL" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/SPIN" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">SPIN</span></strong><br><a href="http://purl.org/adms/representationtechnique/SPIN">http://purl.org/adms/representationtechnique/SPIN</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/SPIN" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">SPARQL Inference Notation</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/SPIN" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/SWRL" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">SWRL</span></strong><br><a href="http://purl.org/adms/representationtechnique/SWRL">http://purl.org/adms/representationtechnique/SWRL</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/SWRL" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Semantic Web Rule Language</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/SWRL" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/Schematron" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Schematron</span></strong><br><a href="http://purl.org/adms/representationtechnique/Schematron">http://purl.org/adms/representationtechnique/Schematron</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/Schematron" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Schematron</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/Schematron" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/TopicMaps" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">TopicMaps</span></strong><br><a href="http://purl.org/adms/representationtechnique/TopicMaps">http://purl.org/adms/representationtechnique/TopicMaps</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/TopicMaps" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Topic Maps</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/TopicMaps" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/UML" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">UML</span></strong><br><a href="http://purl.org/adms/representationtechnique/UML">http://purl.org/adms/representationtechnique/UML</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/UML" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Unified Modelling Language</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/UML" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/WSDL" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">WSDL</span></strong><br><a href="http://purl.org/adms/representationtechnique/WSDL">http://purl.org/adms/representationtechnique/WSDL</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/WSDL" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Web Service Description Language</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/WSDL" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/WSMO" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">WSMO</span></strong><br><a href="http://purl.org/adms/representationtechnique/WSMO">http://purl.org/adms/representationtechnique/WSMO</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/WSMO" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Web Service Modelling Ontology</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/WSMO" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li><li><strong><span about="http://purl.org/adms/representationtechnique/XMLSchema" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">XMLSchema</span></strong><br><a href="http://purl.org/adms/representationtechnique/XMLSchema">http://purl.org/adms/representationtechnique/XMLSchema</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/representationtechnique/XMLSchema" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">XML Schema</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/representationtechnique/XMLSchema" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/representationtechnique/1.0</span><br></li></ol>
+
+<hr>
+
+<h2 id="S1" style="clear: both;padding:40px 0 0 0">Status</h2><p>
+				URI:<a href="http://purl.org/adms/status/1.0">http://purl.org/adms/status/1.0</a><br>
+				rdf:type:<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">http://www.w3.org/2004/02/skos/core#ConceptScheme</a><br><span about="http://purl.org/adms/status/1.0" property="http://www.w3.org/2000/01/rdf-schema#label" typeof="http://www.w3.org/2004/02/skos/core#ConceptScheme" content="Status"></span><a name="http://purl.org/adms/status/1.0"></a></p><p><a href="#" onclick="fold('http://purl.org/adms/status/1.0')">+ skos:hasTopConcept</a></p><ol id="http://purl.org/adms/status/1.0" class="unfolded"><li><strong><span about="http://purl.org/adms/status/Completed" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Completed</span></strong><br><a href="http://purl.org/adms/status/Completed">http://purl.org/adms/status/Completed</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/status/Completed" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Completed</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/status/Completed" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/status/1.0</span><br></li><li><strong><span about="http://purl.org/adms/status/Deprecated" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Deprecated</span></strong><br><a href="http://purl.org/adms/status/Deprecated">http://purl.org/adms/status/Deprecated</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/status/Deprecated" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Deprecated</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/status/Deprecated" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/status/1.0</span><br></li><li><strong><span about="http://purl.org/adms/status/UnderDevelopment" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">UnderDevelopment</span></strong><br><a href="http://purl.org/adms/status/UnderDevelopment">http://purl.org/adms/status/UnderDevelopment</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/status/UnderDevelopment" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Under development</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/status/UnderDevelopment" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/status/1.0</span><br></li><li><strong><span about="http://purl.org/adms/status/Withdrawn" typeof="http://www.w3.org/2004/02/skos/core#Concept" property="http://www.w3.org/2004/02/skos/core#notation">Withdrawn</span></strong><br><a href="http://purl.org/adms/status/Withdrawn">http://purl.org/adms/status/Withdrawn</a><br><a href="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</a>&nbsp;
+						
+								"<span about="http://purl.org/adms/status/Withdrawn" property="http://www.w3.org/2004/02/skos/core#prefLabel" xml:lang="en">Withdrawn</span>"@en<br><a href="http://www.w3.org/2004/02/skos/core#inScheme">http://www.w3.org/2004/02/skos/core#inScheme</a>&nbsp;
+						<span about="http://purl.org/adms/status/Withdrawn" property="http://www.w3.org/2004/02/skos/core#inScheme">http://purl.org/adms/status/1.0</span><br></li></ol>
+						
+<hr>
+
+<div id="footer">
+<p style="width:700px;float:left;margin:0 5px 0 0;font-size:small;">
+   
+</p>			
+</div>
+  
+<span id="skype_highlighting_settings" display="none" autoextractnumbers="1">
+						
+</span></body></html>
